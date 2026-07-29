@@ -1,5 +1,23 @@
 const socialHref = "https://www.instagram.com/tigergardens/?hl=en";
 
+const catalogNotes = [
+  {
+    number: "01",
+    title: "Cultivar notes",
+    text: "Each confirmed cultivar will get its own clear field note: name, selection notes, and release status.",
+  },
+  {
+    number: "02",
+    title: "Release status",
+    text: "The menu follows the garden. A listing appears here only when it is approved for public release.",
+  },
+  {
+    number: "03",
+    title: "No made-up menu",
+    text: "We would rather keep this page precise than pad it with names that are not actually in the current garden.",
+  },
+];
+
 export default function StrainsPage() {
   return (
     <main className="launch-page">
@@ -12,24 +30,35 @@ export default function StrainsPage() {
         </nav>
       </header>
       <section className="launch-hero">
-        <p className="overline">Strain guide</p>
-        <h1>The next harvest has a story.</h1>
+        <p className="overline">Cultivar library / live field notes</p>
+        <h1>The garden keeps its own schedule.</h1>
         <p>
-          Current strain details will be posted here as releases are announced.
-          Harvest timing and availability can change, so this guide will stay
-          focused on what is ready now.
+          This is the home for Tiger Gardens cultivar notes. Names, growing
+          details, and release status will be added as each selection is ready
+          for public release.
         </p>
         <a className="button-link" href={socialHref} target="_blank" rel="noreferrer">
           Follow for updates <span aria-hidden="true">{"\u2197"}</span>
         </a>
       </section>
-      <section className="launch-note" id="updates">
-        <span>Growing now</span>
-        <p>When the current lineup is ready to share, it will be listed here.</p>
+      <section className="catalog-section" id="updates">
+        <div className="catalog-heading">
+          <span>Current field guide</span>
+          <p>A clear record, updated with the garden.</p>
+        </div>
+        <div className="catalog-grid">
+          {catalogNotes.map((note) => (
+            <article className="catalog-card" key={note.number}>
+              <span>{note.number}</span>
+              <h2>{note.title}</h2>
+              <p>{note.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
       <footer className="footer">
         <a className="wordmark" href="/">Tiger Gardens</a>
-        <p>Trinity County, California {"\u00b7"} Est. 2018</p>
+        <p>Trinity County, California {"\u00b7"} Est. 2018 {"\u00b7"} 21+</p>
         <p>{"\u00a9"} {new Date().getFullYear()} Tiger Gardens</p>
       </footer>
     </main>

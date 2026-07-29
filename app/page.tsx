@@ -35,6 +35,7 @@ export default function Home() {
         </header>
 
         <div className="hero-center">
+          <p className="hero-eyebrow">Sun-grown field cultivation</p>
           <img
             className="hero-emblem"
             src="/tiger-gardens-logo.png"
@@ -47,8 +48,19 @@ export default function Home() {
         </div>
 
         <div className="hero-note">
-          <span>Trinity County, California</span>
-          <span>Rooted here since 2018</span>
+          <span>Trinity County, California · 40°43′N / 122°48′W</span>
+          <span>Small batch · Rooted here since 2018</span>
+        </div>
+      </section>
+
+      <section className="garden-signal" aria-label="Tiger Gardens values">
+        <div className="signal-track">
+          <span>Trinity County</span><i aria-hidden="true">✦</i>
+          <span>Sun-grown</span><i aria-hidden="true">✦</i>
+          <span>Small batch</span><i aria-hidden="true">✦</i>
+          <span>Est. 2018</span><i aria-hidden="true">✦</i>
+          <span>Trinity County</span><i aria-hidden="true">✦</i>
+          <span>Sun-grown</span>
         </div>
       </section>
 
@@ -56,16 +68,21 @@ export default function Home() {
         <div className="section-index">01 / The story</div>
         <div className="story-copy">
           <p className="overline">A garden with a point of view</p>
-          <h1>Made by this place.</h1>
+          <h1>Made by the mountains.</h1>
           <p className="lead">
-            Tiger Gardens is rooted in Trinity County, where the mountains,
-            weather, and work of tending the land shape every season.
+            Tiger Gardens is a small-batch cannabis cultivation company rooted
+            in Trinity County, California.
           </p>
           <p>
-            We believe in patient cultivation, strong genetics, and care that
-            shows up in the small details. This is a working garden, built with
-            respect for the place around it.
+            The garden began here in 2018, built around a simple idea: grow in
+            step with the place. The mountains, changing weather, natural
+            sunlight, and close attention to the work shape every season.
           </p>
+          <div className="story-tags" aria-label="Tiger Gardens at a glance">
+            <span>Natural sunlight</span>
+            <span>Well water</span>
+            <span>Trinity County</span>
+          </div>
         </div>
       </section>
 
@@ -77,15 +94,15 @@ export default function Home() {
           </video>
           <div className="film-shade" aria-hidden="true" />
           <span className="film-kicker">Aerial garden film</span>
-          <strong>From above.</strong>
-          <p>A slow pass over the Tiger Gardens field.</p>
+          <strong>Read the rows.</strong>
+          <p>A slow pass over the Tiger Gardens field, five seconds at a time.</p>
           <span className="film-line" aria-hidden="true" />
         </div>
         <div className="film-copy">
           <p className="overline">The garden in motion</p>
           <p>
-            A slow pass over the field gives the site the same feeling as being
-            on the land: open, quiet, and unmistakably Trinity County.
+            A quiet flight over the field—the same view that makes the scale of
+            the garden, the surrounding ridges, and the season feel real.
           </p>
         </div>
       </section>
@@ -123,18 +140,20 @@ export default function Home() {
         <div className="section-index">03 / The garden</div>
         <div className="garden-index-main">
           <p className="overline">What is growing next</p>
-          <h2>Follow the garden as it takes shape.</h2>
+          <h2>The release desk is open.</h2>
           <div className="garden-cards">
             <a className="garden-card" href="/strains">
-              <span>01 / Strain guide</span>
+              <span className="card-image card-image-strains" aria-hidden="true" />
+              <span>01 / Cultivar library</span>
               <h3>Current strains</h3>
-              <p>Details and availability will be shared here as releases are announced.</p>
+              <p>Release-ready cultivar notes, added only when they are confirmed for public sharing.</p>
               <b aria-hidden="true">{"\u2192"}</b>
             </a>
             <a className="garden-card" href="/products">
-              <span>02 / Product releases</span>
+              <span className="card-image card-image-products" aria-hidden="true" />
+              <span>02 / Release notebook</span>
               <h3>Upcoming products</h3>
-              <p>The next chapter of Tiger Gardens is in development. Watch this space.</p>
+              <p>Fresh pre-rolls are the immediate focus, with more garden-grown releases to follow.</p>
               <b aria-hidden="true">{"\u2192"}</b>
             </a>
           </div>
@@ -145,22 +164,22 @@ export default function Home() {
         <div className="section-index">04 / How we work</div>
         <div className="cultivation-main">
           <p className="overline">Season after season</p>
-          <h2>Grown with care. Defined by place.</h2>
+          <h2>Care is the whole system.</h2>
           <div className="cultivation-grid">
             <article>
               <span>01</span>
-              <h3>Hands in the garden</h3>
-              <p>We bring a close, attentive approach to the work from planting through harvest.</p>
+              <h3>Built around sunlight</h3>
+              <p>The outdoor garden follows the pace of the season and the light that reaches this place.</p>
             </article>
             <article>
               <span>02</span>
-              <h3>Thoughtful by nature</h3>
-              <p>We make room for the seasonal rhythm of the garden and the details it asks of us.</p>
+              <h3>Close to the source</h3>
+              <p>Well water and a practical, careful approach keep the work connected to the land.</p>
             </article>
             <article>
               <span>03</span>
-              <h3>Built to share</h3>
-              <p>New strain and product information will arrive here as it is ready to be released.</p>
+              <h3>Made to show up right</h3>
+              <p>We aim for fresh, dependable products with packaging that is clean, recognizable, and useful.</p>
             </article>
           </div>
         </div>
@@ -173,8 +192,8 @@ export default function Home() {
         </div>
         <div className="connect-copy">
           <p>
-            Follow along for Tiger Gardens updates, releases, and the changing
-            seasons in Trinity County.
+            Follow the field, the cultivars, and each release as it becomes
+            ready. We share what is real, when it is ready to share.
           </p>
           <div className="social-links" aria-label="Tiger Gardens social media">
             {socialLinks.map((link) => (
@@ -190,7 +209,7 @@ export default function Home() {
 
       <footer className="footer">
         <a className="wordmark" href="#top">Tiger Gardens</a>
-        <p>Trinity County, California {"\u00b7"} Est. 2018</p>
+        <p>Trinity County, California {"\u00b7"} Est. 2018 {"\u00b7"} 21+</p>
         <p>{"\u00a9"} {new Date().getFullYear()} Tiger Gardens</p>
       </footer>
     </main>
