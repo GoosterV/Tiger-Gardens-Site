@@ -5,15 +5,8 @@ const socialLinks = [
 ];
 
 const gardenPhotos = [
-  { src: "/garden-01.webp", alt: "Flowering plants across the Tiger Gardens field" },
-  { src: "/garden-02.webp", alt: "Flowering plants in the Trinity County garden" },
   { src: "/garden-03.webp", alt: "Garden beds framed by a Trinity County ridgeline" },
-  { src: "/garden-04.webp", alt: "Early-season garden rows at Tiger Gardens" },
-  { src: "/garden-05.webp", alt: "Cultivated rows in the Tiger Gardens field" },
-  { src: "/garden-06.webp", alt: "Tiger Gardens field and surrounding hills" },
   { src: "/garden-07.webp", alt: "Tiger Gardens field in evening light" },
-  { src: "/garden-08.webp", alt: "Flowering garden at sunset in Trinity County" },
-  { src: "/garden-09.webp", alt: "Green and purple plants along a central garden row" },
   { src: "/garden-10.webp", alt: "Green and purple garden blocks at Tiger Gardens" },
 ];
 
@@ -28,8 +21,8 @@ export default function Home() {
           </a>
           <nav aria-label="Primary navigation">
             <a href="#story">The story</a>
-            <a href="#field-notes">Field notes</a>
-            <a href="#garden">The garden</a>
+            <a href="/inventory">Inventory</a>
+            <a href="/services">Services</a>
             <a href="#connect">Connect</a>
           </nav>
         </header>
@@ -88,22 +81,9 @@ export default function Home() {
 
       <section className="aerial-film" aria-label="Tiger Gardens aerial garden film">
         <div className="film-frame">
-          {/* A silent background loop keeps the focus on the garden. */}
           <video className="film-video" autoPlay muted loop playsInline preload="metadata" poster="/garden-09.webp">
             <source src="/garden-aerial.mp4" type="video/mp4" />
           </video>
-          <div className="film-shade" aria-hidden="true" />
-          <span className="film-kicker">Aerial garden film</span>
-          <strong>Read the rows.</strong>
-          <p>A slow pass over the Tiger Gardens field, five seconds at a time.</p>
-          <span className="film-line" aria-hidden="true" />
-        </div>
-        <div className="film-copy">
-          <p className="overline">The garden in motion</p>
-          <p>
-            A quiet flight over the field—the same view that makes the scale of
-            the garden, the surrounding ridges, and the season feel real.
-          </p>
         </div>
       </section>
 
@@ -129,7 +109,7 @@ export default function Home() {
               />
               <figcaption>
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <span>Field note</span>
+              <span>Tiger Gardens</span>
               </figcaption>
             </figure>
           ))}
@@ -139,21 +119,28 @@ export default function Home() {
       <section className="garden-index section-wrap" id="garden">
         <div className="section-index">03 / The garden</div>
         <div className="garden-index-main">
-          <p className="overline">What is growing next</p>
-          <h2>The release desk is open.</h2>
+          <p className="overline">The current board</p>
+          <h2>The garden, ready to meet people.</h2>
           <div className="garden-cards">
-            <a className="garden-card" href="/strains">
+            <a className="garden-card" href="/inventory">
               <span className="card-image card-image-strains" aria-hidden="true" />
-              <span>01 / Cultivar library</span>
-              <h3>Current strains</h3>
-              <p>Release-ready cultivar notes, added only when they are confirmed for public sharing.</p>
+              <span>01 / Live inventory</span>
+              <h3>Three in the garden.</h3>
+              <p>Trinity Blizzard, London Truffle, and Tree Flip. View the current selection.</p>
               <b aria-hidden="true">{"\u2192"}</b>
             </a>
-            <a className="garden-card" href="/products">
+            <a className="garden-card" href="/services">
               <span className="card-image card-image-products" aria-hidden="true" />
-              <span>02 / Release notebook</span>
-              <h3>Upcoming products</h3>
-              <p>Fresh pre-rolls are the immediate focus, with more garden-grown releases to follow.</p>
+              <span>02 / Business services</span>
+              <h3>Packaging & transport.</h3>
+              <p>Start a conversation about packaging needs or transportation inquiries.</p>
+              <b aria-hidden="true">{"\u2192"}</b>
+            </a>
+            <a className="garden-card garden-card-marketplace" href="/marketplace">
+              <span className="card-image card-image-marketplace" aria-hidden="true" />
+              <span>03 / Coming later</span>
+              <h3>Wholesale exchange.</h3>
+              <p>A credentialed, account-based marketplace for qualified business buyers.</p>
               <b aria-hidden="true">{"\u2192"}</b>
             </a>
           </div>
@@ -197,12 +184,13 @@ export default function Home() {
           </p>
           <div className="social-links" aria-label="Tiger Gardens social media">
             {socialLinks.map((link) => (
-              <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+            <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
                 <span>{link.label}</span>
                 <span aria-hidden="true">{"\u2197"}</span>
               </a>
             ))}
           </div>
+          <a className="business-link" href="/services">Business & wholesale inquiries <span aria-hidden="true">{"\u2192"}</span></a>
           <p className="connect-location">Lewiston, California</p>
         </div>
       </section>

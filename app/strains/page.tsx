@@ -1,20 +1,20 @@
 const socialHref = "https://www.instagram.com/tigergardens/?hl=en";
 
-const catalogNotes = [
+const currentCultivars = [
   {
     number: "01",
-    title: "Cultivar notes",
-    text: "Each confirmed cultivar will get its own clear field note: name, selection notes, and release status.",
+    title: "Trinity Blizzard",
+    text: "Current Tiger Gardens selection. Release details are shared as availability is confirmed.",
   },
   {
     number: "02",
-    title: "Release status",
-    text: "The menu follows the garden. A listing appears here only when it is approved for public release.",
+    title: "London Truffle",
+    text: "Current Tiger Gardens selection. Release details are shared as availability is confirmed.",
   },
   {
     number: "03",
-    title: "No made-up menu",
-    text: "We would rather keep this page precise than pad it with names that are not actually in the current garden.",
+    title: "Tree Flip",
+    text: "Current Tiger Gardens selection. Release details are shared as availability is confirmed.",
   },
 ];
 
@@ -30,12 +30,11 @@ export default function StrainsPage() {
         </nav>
       </header>
       <section className="launch-hero">
-        <p className="overline">Cultivar library / live field notes</p>
-        <h1>The garden keeps its own schedule.</h1>
+        <p className="overline">Cultivar library / current selection</p>
+        <h1>What&apos;s in the garden now.</h1>
         <p>
-          This is the home for Tiger Gardens cultivar notes. Names, growing
-          details, and release status will be added as each selection is ready
-          for public release.
+          These are the current Tiger Gardens cultivars. This list stays tight:
+          only what is actively in the garden belongs here.
         </p>
         <a className="button-link" href={socialHref} target="_blank" rel="noreferrer">
           Follow for updates <span aria-hidden="true">{"\u2197"}</span>
@@ -43,11 +42,11 @@ export default function StrainsPage() {
       </section>
       <section className="catalog-section" id="updates">
         <div className="catalog-heading">
-          <span>Current field guide</span>
-          <p>A clear record, updated with the garden.</p>
+          <span>Live field guide</span>
+          <p>Three current cultivars. No old menu, no filler.</p>
         </div>
         <div className="catalog-grid">
-          {catalogNotes.map((note) => (
+          {currentCultivars.map((note) => (
             <article className="catalog-card" key={note.number}>
               <span>{note.number}</span>
               <h2>{note.title}</h2>
