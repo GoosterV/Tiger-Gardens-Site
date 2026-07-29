@@ -62,7 +62,7 @@ export default function FarmExperience() {
           <figure className="hero-logo-main" aria-label="Tiger Gardens crest">
             <img src="/tiger-gardens-mark.webp" alt="Tiger Gardens, Trinity County, established 2018" />
           </figure>
-          <figure className="hero-photo hero-photo-small fourth"><img src="/garden-05.webp" alt="A lush row of plants at Tiger Gardens" /></figure>
+          <figure className="hero-photo hero-photo-small fourth"><img src="/garden-06.webp" alt="A wide view across the outdoor Tiger Gardens field" /></figure>
           <figure className="hero-photo hero-photo-small first"><img src="/garden-04.webp" alt="Sunlit rows at Tiger Gardens" /></figure>
           <figure className="hero-photo hero-photo-small second"><img src="/garden-08.webp" alt="Sunlight over the Tiger Gardens field" /></figure>
           <figure className="hero-photo hero-photo-relocated">
