@@ -47,21 +47,18 @@ export default function FarmExperience() {
 
       <main className={`tg-experience ${entered ? "has-entered" : ""}`} onPointerMove={moveScene}>
         <header className="tg-topbar">
-          <a className="tg-wordmark" href="#top"><img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" /><span>Tiger Gardens</span></a>
+          <a className="tg-wordmark" href="#top"><img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" /></a>
           <nav aria-label="Primary navigation"><a href="#story">Story</a><a href="/strains">Cultivars</a><a href="/inventory">Inventory</a></nav>
           <a className="tg-inventory-link" href="/inventory">Live inventory <span aria-hidden="true">↗</span></a>
         </header>
 
         <section className="tg-hero-scene" id="top">
+          <h1 className="tg-sr-only">Tiger Gardens</h1>
           <div className="scene-grid" aria-hidden="true" />
           <div className="scene-line line-one" aria-hidden="true" />
           <div className="scene-line line-two" aria-hidden="true" />
           <p className="scene-meta meta-left">Trinity County<br />California</p>
           <p className="scene-meta meta-right">Sun-grown<br />Est. 2018</p>
-          <div className="hero-title fx-reveal">
-            <p>Small batch cannabis<br />from the mountains</p>
-            <h1>TIGER<br /><span>GARDENS</span></h1>
-          </div>
           <figure className="hero-logo-main" aria-label="Tiger Gardens crest">
             <img src="/tiger-gardens-mark.webp" alt="Tiger Gardens, Trinity County, established 2018" />
           </figure>
@@ -130,7 +127,7 @@ export default function FarmExperience() {
           <div>{socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer"><span>{link.label}</span><span aria-hidden="true">↗</span></a>)}</div>
         </section>
 
-        <footer className="tg-footer"><a className="tg-wordmark" href="#top"><img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" /><span>Tiger Gardens</span></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
+        <footer className="tg-footer"><a className="tg-wordmark" href="#top"><img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" /></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
       </main>
     </>
   );
