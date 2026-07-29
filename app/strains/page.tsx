@@ -1,65 +1,25 @@
-const socialHref = "https://www.instagram.com/tigergardens/?hl=en";
-
-const currentCultivars = [
-  {
-    number: "01",
-    title: "Trinity Blizzard",
-    text: "Current Tiger Gardens selection. Release details are shared as availability is confirmed.",
-  },
-  {
-    number: "02",
-    title: "London Truffle",
-    text: "Current Tiger Gardens selection. Release details are shared as availability is confirmed.",
-  },
-  {
-    number: "03",
-    title: "Tree Flip",
-    text: "Current Tiger Gardens selection. Release details are shared as availability is confirmed.",
-  },
-];
+const cultivars = ["Trinity Blizzard", "London Truffle", "Tree Flip"];
 
 export default function StrainsPage() {
   return (
-    <main className="launch-page">
-      <header className="page-header">
-        <a className="wordmark" href="/">Tiger Gardens</a>
-        <nav aria-label="Primary navigation">
-          <a href="/">Home</a>
-          <a href="/products">Products</a>
-          <a href="#updates">Updates</a>
-        </nav>
+    <main className="tg-subpage">
+      <header className="tg-nav">
+        <a className="tg-brand" href="/"><span className="brand-mark" aria-hidden="true">TG</span><span>Tiger Gardens</span></a>
+        <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/inventory">Inventory</a></nav>
+        <a className="nav-cta" href="/inventory">Live inventory <span aria-hidden="true">↗</span></a>
       </header>
-      <section className="launch-hero">
-        <p className="overline">Cultivar library / current selection</p>
-        <h1>What&apos;s in the garden now.</h1>
-        <p>
-          These are the current Tiger Gardens cultivars. This list stays tight:
-          only what is actively in the garden belongs here.
-        </p>
-        <a className="button-link" href={socialHref} target="_blank" rel="noreferrer">
-          Follow for updates <span aria-hidden="true">{"\u2197"}</span>
-        </a>
+      <section className="subpage-hero">
+        <p className="tg-eyebrow"><span aria-hidden="true" /> Current field guide</p>
+        <h1>Only what&apos;s<br />in the garden.</h1>
+        <p>The Tiger Gardens cultivar library stays focused on current selections. No old menu, no filler.</p>
       </section>
-      <section className="catalog-section" id="updates">
-        <div className="catalog-heading">
-          <span>Live field guide</span>
-          <p>Three current cultivars. No old menu, no filler.</p>
-        </div>
-        <div className="catalog-grid">
-          {currentCultivars.map((note) => (
-            <article className="catalog-card" key={note.number}>
-              <span>{note.number}</span>
-              <h2>{note.title}</h2>
-              <p>{note.text}</p>
-            </article>
-          ))}
+      <section className="subpage-board">
+        <div className="board-heading"><span>Live selection</span><p>Current cultivars / 2026</p></div>
+        <div className="record-list">
+          {cultivars.map((cultivar, index) => <a href="/inventory" key={cultivar}><span>TG-{String(index + 1).padStart(2, "0")}</span><strong>{cultivar}</strong><em>Current selection</em><b aria-hidden="true">→</b></a>)}
         </div>
       </section>
-      <footer className="footer">
-        <a className="wordmark" href="/">Tiger Gardens</a>
-        <p>Trinity County, California {"\u00b7"} Est. 2018 {"\u00b7"} 21+</p>
-        <p>{"\u00a9"} {new Date().getFullYear()} Tiger Gardens</p>
-      </footer>
+      <footer className="tg-footer"><a className="tg-brand" href="/"><span className="brand-mark" aria-hidden="true">TG</span><span>Tiger Gardens</span></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
     </main>
   );
 }

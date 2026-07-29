@@ -1,54 +1,27 @@
+const inventory = ["Trinity Blizzard", "London Truffle", "Tree Flip"];
 const socialHref = "https://www.instagram.com/tigergardens/?hl=en";
-
-const currentInventory = [
-  "Trinity Blizzard",
-  "London Truffle",
-  "Tree Flip",
-];
 
 export default function InventoryPage() {
   return (
-    <main className="launch-page inventory-page">
-      <header className="page-header">
-        <a className="wordmark" href="/">Tiger Gardens</a>
-        <nav aria-label="Primary navigation">
-          <a href="/strains">Cultivars</a>
-          <a href="/services">Services</a>
-          <a href="/marketplace">Wholesale</a>
-        </nav>
+    <main className="tg-subpage">
+      <header className="tg-nav">
+        <a className="tg-brand" href="/"><span className="brand-mark" aria-hidden="true">TG</span><span>Tiger Gardens</span></a>
+        <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/strains">Cultivars</a></nav>
+        <a className="nav-cta" href="/strains">Current cultivars <span aria-hidden="true">↗</span></a>
       </header>
-      <section className="launch-hero">
-        <p className="overline">Live inventory / current garden</p>
-        <h1>Only what&apos;s growing now.</h1>
-        <p>
-          This board reflects the current Tiger Gardens selection. Availability
-          changes with the garden, so use it as a clear starting point for a
-          business inquiry.
-        </p>
+      <section className="subpage-hero inventory-hero">
+        <p className="tg-eyebrow"><span aria-hidden="true" /> Live inventory</p>
+        <h1>The field,<br />right now.</h1>
+        <p>This board reflects the active Tiger Gardens selection. Availability changes with the season—ask us for current details.</p>
       </section>
-      <section className="inventory-board">
-        <div className="catalog-heading">
-          <span>Current cultivars</span>
-          <p>Updated for the garden, not a history book.</p>
+      <section className="subpage-board inventory-board">
+        <div className="board-heading"><span>Current garden</span><p>03 active cultivars</p></div>
+        <div className="record-list">
+          {inventory.map((cultivar, index) => <div key={cultivar}><span>{String(index + 1).padStart(2, "0")}</span><strong>{cultivar}</strong><em>In the garden</em></div>)}
         </div>
-        <ol className="inventory-list">
-          {currentInventory.map((cultivar, index) => (
-            <li key={cultivar}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{cultivar}</strong>
-              <em>Current selection</em>
-            </li>
-          ))}
-        </ol>
-        <a className="button-link light-button" href={socialHref} target="_blank" rel="noreferrer">
-          Ask about availability <span aria-hidden="true">{"\u2197"}</span>
-        </a>
+        <a className="primary-button" href={socialHref} target="_blank" rel="noreferrer">Ask about availability <span aria-hidden="true">↗</span></a>
       </section>
-      <footer className="footer">
-        <a className="wordmark" href="/">Tiger Gardens</a>
-        <p>Trinity County, California {"\u00b7"} Est. 2018 {"\u00b7"} 21+</p>
-        <p>{"\u00a9"} {new Date().getFullYear()} Tiger Gardens</p>
-      </footer>
+      <footer className="tg-footer"><a className="tg-brand" href="/"><span className="brand-mark" aria-hidden="true">TG</span><span>Tiger Gardens</span></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
     </main>
   );
 }
