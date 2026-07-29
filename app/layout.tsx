@@ -26,10 +26,10 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: `${origin}/og.png`,
+          url: `${origin}/og-farm.png`,
           width: 1792,
           height: 944,
-          alt: "Tiger Gardens cultivation landscape in Trinity County, California",
+          alt: "Tiger Gardens: small-batch sun-grown cannabis in Trinity County, California",
         },
       ],
     },
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Tiger Gardens",
       description: "Cultivated with care in Trinity County, California.",
-      images: [`${origin}/og.png`],
+      images: [`${origin}/og-farm.png`],
     },
   };
 }
