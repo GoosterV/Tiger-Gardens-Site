@@ -66,9 +66,9 @@ export default function FarmExperience() {
             <img src="/garden-09.webp" alt="Green plants on the left and purple plants on the right in a Tiger Gardens field row" />
             <figcaption>Field notes / 2026</figcaption>
           </figure>
-          <figure className="hero-photo hero-photo-small first"><img src="/garden-03.webp" alt="Tiger Gardens row under a Trinity County ridgeline" /></figure>
-          <figure className="hero-photo hero-photo-small second"><img src="/garden-10.webp" alt="Tiger Gardens green and purple garden blocks" /></figure>
-          <div className="hero-badge" aria-label="Tiger Gardens established 2018"><strong>TG</strong><span>Trinity<br />County</span><em>2018</em></div>
+          <figure className="hero-photo hero-photo-small first"><img src="/garden-04.webp" alt="Sunlit rows at Tiger Gardens" /></figure>
+          <figure className="hero-photo hero-photo-small second"><img src="/garden-08.webp" alt="Sunlight over the Tiger Gardens field" /></figure>
+          <div className="hero-badge hero-crest" aria-label="Tiger Gardens, Trinity County, established 2018"><img src="/tiger-gardens-mark.webp" alt="" /></div>
           <a className="hero-status-card" href="/inventory"><span>Current garden</span><strong>03</strong><em>cultivars</em><b aria-hidden="true">↗</b></a>
           <a className="scroll-prompt" href="#story">Scroll to explore <span aria-hidden="true">↓</span></a>
         </section>
@@ -80,6 +80,15 @@ export default function FarmExperience() {
             <p>Tiger Gardens began in Trinity County in 2018. We work with the season, the natural sunlight, and the land under our feet to grow cannabis that feels tied to a real place.</p>
             <a className="tg-text-link" href="#garden">See what&apos;s growing <span aria-hidden="true">↘</span></a>
           </div>
+        </section>
+
+        <section className="tg-field-atlas" aria-label="Scenes from Tiger Gardens">
+          <div className="atlas-label fx-reveal"><span>Between the rows</span><p>Trinity County<br />California</p></div>
+          <figure className="atlas-shot atlas-01 fx-reveal"><img src="/garden-01.webp" alt="Mature plants growing densely in the garden" /></figure>
+          <figure className="atlas-shot atlas-02 fx-reveal"><img src="/garden-03.webp" alt="Tiger Gardens rows with Trinity County hills behind them" /></figure>
+          <figure className="atlas-shot atlas-03 fx-reveal"><img src="/garden-06.webp" alt="Wide view of the outdoor garden under a blue sky" /></figure>
+          <figure className="atlas-shot atlas-04 fx-reveal"><img src="/garden-07.webp" alt="A garden block framed by the mountain landscape" /></figure>
+          <figure className="atlas-shot atlas-05 fx-reveal"><img src="/garden-02.webp" alt="A soft close view into the garden canopy" /></figure>
         </section>
 
         <section className="tg-cultivar-section" id="garden">
