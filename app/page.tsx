@@ -57,6 +57,7 @@ export default function Home() {
 
       <section className="aerial-film" aria-label="Tiger Gardens aerial garden film">
         <div className="film-frame">
+          {/* A silent background loop keeps the garden film light on mobile connections. */}
           <video className="film-video" autoPlay muted loop playsInline preload="metadata">
             <source src="/garden-aerial.mp4" type="video/mp4" />
           </video>
