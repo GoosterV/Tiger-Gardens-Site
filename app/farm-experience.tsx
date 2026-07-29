@@ -62,13 +62,15 @@ export default function FarmExperience() {
             <p>Small batch cannabis<br />from the mountains</p>
             <h1>TIGER<br /><span>GARDENS</span></h1>
           </div>
-          <figure className="hero-photo hero-photo-main">
-            <img src="/garden-09.webp" alt="Green plants on the left and purple plants on the right in a Tiger Gardens field row" />
-            <figcaption>Field notes / 2026</figcaption>
+          <figure className="hero-logo-main" aria-label="Tiger Gardens crest">
+            <img src="/tiger-gardens-mark.webp" alt="Tiger Gardens, Trinity County, established 2018" />
           </figure>
           <figure className="hero-photo hero-photo-small first"><img src="/garden-04.webp" alt="Sunlit rows at Tiger Gardens" /></figure>
           <figure className="hero-photo hero-photo-small second"><img src="/garden-08.webp" alt="Sunlight over the Tiger Gardens field" /></figure>
-          <div className="hero-badge hero-crest" aria-label="Tiger Gardens, Trinity County, established 2018"><img src="/tiger-gardens-mark.webp" alt="" /></div>
+          <figure className="hero-photo hero-photo-relocated">
+            <img src="/garden-09.webp" alt="Green plants on the left and purple plants on the right in a Tiger Gardens field row" />
+            <figcaption>Field notes / 2026</figcaption>
+          </figure>
           <a className="hero-status-card" href="/inventory"><span>Current garden</span><strong>03</strong><em>cultivars</em><b aria-hidden="true">↗</b></a>
           <a className="scroll-prompt" href="#story">Scroll to explore <span aria-hidden="true">↓</span></a>
         </section>
