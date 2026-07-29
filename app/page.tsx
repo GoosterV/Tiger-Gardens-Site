@@ -23,8 +23,8 @@ export default function Home() {
         <div className="hero-center">
           <img
             className="hero-emblem"
-            src="/tiger-gardens-mark.webp"
-            alt="Tiger Gardens, Trinity County, established 2018"
+            src="/tiger-gardens-logo.png"
+            alt="Tiger Gardens logo: Trinity County, established 2018"
           />
           <p className="hero-location">Trinity County, California</p>
           <a className="hero-link" href="#story">
