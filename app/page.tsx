@@ -57,17 +57,20 @@ export default function Home() {
 
       <section className="aerial-film" aria-label="Tiger Gardens aerial garden film">
         <div className="film-frame">
+          <video className="film-video" autoPlay muted loop playsInline preload="metadata">
+            <source src="/garden-aerial.mp4" type="video/mp4" />
+          </video>
+          <div className="film-shade" aria-hidden="true" />
           <span className="film-kicker">Aerial garden film</span>
-          <strong>In the edit</strong>
-          <p>Footage from above Tiger Gardens is on its way.</p>
+          <strong>From above.</strong>
+          <p>A slow pass over the Tiger Gardens field.</p>
           <span className="film-line" aria-hidden="true" />
         </div>
         <div className="film-copy">
           <p className="overline">The garden in motion</p>
           <p>
-            A slow pass over the field will replace the photo sections here.
-            It will give the site the same feeling as being on the land: open,
-            quiet, and unmistakably Trinity County.
+            A slow pass over the field gives the site the same feeling as being
+            on the land: open, quiet, and unmistakably Trinity County.
           </p>
         </div>
       </section>

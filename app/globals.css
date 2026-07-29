@@ -50,11 +50,14 @@ a { color: inherit; text-decoration: none; }
 .story .lead { color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(23px, 2.3vw, 33px); line-height: 1.18; letter-spacing: -0.035em; }
 
 .aerial-film { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.65fr); align-items: stretch; background: var(--ink); color: var(--cream); }
-.film-frame { min-height: 620px; position: relative; display: flex; flex-direction: column; justify-content: center; padding: clamp(42px, 8vw, 116px); overflow: hidden; background: radial-gradient(circle at 70% 18%, rgba(198, 173, 101, 0.23), transparent 30%), radial-gradient(circle at 20% 76%, rgba(72, 105, 72, 0.47), transparent 34%), linear-gradient(140deg, #132a21 0%, #0a1711 55%, #15271d 100%); }
-.film-frame::before, .film-frame::after { content: ""; position: absolute; border: 1px solid rgba(255, 253, 245, 0.2); border-radius: 50%; pointer-events: none; }
+.film-frame { min-height: 620px; position: relative; display: flex; flex-direction: column; justify-content: center; padding: clamp(42px, 8vw, 116px); overflow: hidden; background: #132a21; }
+.film-video, .film-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+.film-video { object-fit: cover; }
+.film-shade { background: linear-gradient(90deg, rgba(8, 20, 14, 0.75) 0%, rgba(8, 20, 14, 0.3) 48%, rgba(8, 20, 14, 0.1) 100%); }
+.film-frame::before, .film-frame::after { content: ""; position: absolute; z-index: 2; border: 1px solid rgba(255, 253, 245, 0.2); border-radius: 50%; pointer-events: none; }
 .film-frame::before { width: min(58vw, 760px); height: min(58vw, 760px); right: -18%; bottom: -48%; }
 .film-frame::after { width: min(32vw, 420px); height: min(32vw, 420px); left: -8%; top: -31%; }
-.film-kicker, .film-frame p, .film-frame strong, .film-line { position: relative; z-index: 1; }
+.film-kicker, .film-frame p, .film-frame strong, .film-line { position: relative; z-index: 3; }
 .film-kicker { color: #dcb86e; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 .film-frame strong { max-width: 560px; margin: 18px 0 12px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(53px, 8.2vw, 124px); font-weight: 400; line-height: 0.82; letter-spacing: -0.08em; }
 .film-frame p { max-width: 310px; margin: 0; color: rgba(255, 253, 245, 0.72); font-size: 15px; }
