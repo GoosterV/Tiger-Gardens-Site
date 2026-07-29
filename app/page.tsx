@@ -1,193 +1,145 @@
 const socialLinks = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/tigergardens/?hl=en",
-  },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/114339021591501",
-  },
-  {
-    label: "X",
-    href: "https://www.x.com/TigerGardens",
-  },
+  { label: "Instagram", href: "https://www.instagram.com/tigergardens/?hl=en" },
+  { label: "Facebook", href: "https://www.facebook.com/114339021591501" },
+  { label: "X", href: "https://www.x.com/TigerGardens" },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <section className="hero" id="top">
-        <div className="hero-noise" aria-hidden="true" />
-        <header className="site-header">
-          <a className="brand" href="#top" aria-label="Tiger Gardens home">
-            <span className="brand-mark" aria-hidden="true">
-              TG
-            </span>
-            <span>
-              <strong>Tiger Gardens</strong>
-              <small>Trinity County, California</small>
-            </span>
+    <main className="home" id="top">
+      <section className="hero" aria-label="Tiger Gardens in Trinity County">
+        <div className="hero-shade" aria-hidden="true" />
+        <header className="hero-header">
+          <a className="wordmark" href="#top" aria-label="Tiger Gardens home">
+            Tiger Gardens
           </a>
           <nav aria-label="Primary navigation">
-            <a href="#about">About</a>
-            <a href="#approach">Our approach</a>
+            <a href="#story">The story</a>
+            <a href="#cultivation">Cultivation</a>
             <a href="#connect">Connect</a>
-            <a href="#careers">Careers</a>
           </nav>
         </header>
 
-        <div className="hero-content page-width">
-          <p className="eyebrow">California cannabis cultivation</p>
-          <h1>
-            Rooted in Trinity County.
-            <span>Cultivated with care.</span>
-          </h1>
-          <p className="hero-copy">
-            Tiger Gardens is a licensed cultivation company committed to
-            thoughtfully grown, high-quality cannabis and the land that makes it
-            possible.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#connect">
-              Connect with us <span aria-hidden="true">↗</span>
-            </a>
-            <a className="button button-secondary" href="#about">
-              Our story <span aria-hidden="true">↓</span>
-            </a>
-          </div>
+        <div className="hero-center">
+          <img
+            className="hero-emblem"
+            src="/tiger-gardens-mark.webp"
+            alt="Tiger Gardens, Trinity County, established 2018"
+          />
+          <p className="hero-location">Trinity County, California</p>
+          <a className="hero-link" href="#story">
+            Enter the garden <span aria-hidden="true">↓</span>
+          </a>
         </div>
 
-        <div className="hero-bottom page-width" aria-label="Tiger Gardens values">
-          <span>Locally grown</span>
-          <span>Sustainably minded</span>
-          <span>Responsibly cultivated</span>
+        <div className="hero-note">
+          <span>Licensed California cultivator</span>
+          <span>Rooted here since 2018</span>
         </div>
       </section>
 
-      <section className="intro page-width" id="about">
-        <div className="section-label">
-          <span>01</span>
-          <p>About Tiger Gardens</p>
-        </div>
-        <div className="intro-copy">
-          <p className="kicker">A considered way to grow.</p>
-          <h2>Quality starts with the conditions we create.</h2>
-          <p>
-            Based in Lewiston, California, Tiger Gardens grows cannabis with a
-            focus on careful cultivation, strong genetics, and the best possible
-            growing conditions. Every plant receives patient attention from an
-            experienced team that takes pride in doing things the right way.
+      <section className="story section-wrap" id="story">
+        <div className="section-index">01 / The story</div>
+        <div className="story-copy">
+          <p className="overline">A garden with a point of view</p>
+          <h1>Made by this place.</h1>
+          <p className="lead">
+            Tiger Gardens is a licensed cannabis cultivation company rooted in
+            Trinity County. The mountains, the weather, and the work of tending
+            the land are not a backdrop to what we do—they shape it.
           </p>
           <p>
-            We believe high standards and environmental consideration belong in
-            the same garden. Our work is grounded in local cultivation and a
-            long-term commitment to the communities we serve.
+            We grow with patience, strong genetics, and respect for the natural
+            rhythm of the garden. Every season asks something different of us;
+            every plant receives the attention it deserves.
           </p>
         </div>
       </section>
 
-      <section className="landscape" aria-label="Tiger Gardens cultivation landscape">
-        <div className="landscape-overlay" />
-        <div className="landscape-copy page-width">
-          <p className="eyebrow">Tiger Gardens</p>
-          <h2>From this place,<br />with intention.</h2>
+      <section className="field-feature" aria-label="Tiger Gardens cultivation field">
+        <div className="field-frame">
+          <img src="/cultivation-field.webp" alt="A Tiger Gardens cultivation field in Trinity County" />
+        </div>
+        <div className="field-caption">
+          <p className="overline">Trinity County, California</p>
+          <p>
+            High standards begin with the conditions we create—careful beds,
+            thoughtful irrigation, and a team that knows the garden from the
+            ground up.
+          </p>
         </div>
       </section>
 
-      <section className="approach page-width" id="approach">
-        <div className="section-label">
-          <span>02</span>
-          <p>Our approach</p>
-        </div>
-        <div className="approach-content">
-          <div>
-            <p className="kicker">What guides our work</p>
-            <h2>Care at every stage of cultivation.</h2>
-          </div>
-          <div className="principles">
+      <section className="cultivation section-wrap" id="cultivation">
+        <div className="section-index">02 / Cultivation</div>
+        <div className="cultivation-main">
+          <p className="overline">The work, season after season</p>
+          <h2>Grown with care. Defined by place.</h2>
+          <div className="cultivation-grid">
             <article>
               <span>01</span>
               <h3>Thoughtful cultivation</h3>
               <p>
-                We use attentive, state-of-the-art cultivation practices to help
-                every plant reach its potential.
+                We bring an attentive, hands-on approach to every stage, from
+                planting through harvest.
               </p>
             </article>
             <article>
               <span>02</span>
-              <h3>High-quality flower</h3>
+              <h3>Quality flower</h3>
               <p>
-                Our focus is a consistently high-quality cannabis experience,
-                grown with patience and precision.
+                Our focus is exceptional cannabis, grown with patience,
+                consistency, and intention.
               </p>
             </article>
             <article>
               <span>03</span>
-              <h3>Responsible presence</h3>
+              <h3>Responsible roots</h3>
               <p>
-                We support responsible cannabis use and aim to be a positive,
-                considered presence in our community.
+                We believe cultivation carries a responsibility to the land and
+                the community around it.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section className="connect" id="connect">
-        <div className="connect-inner page-width">
-          <div>
-            <p className="eyebrow">Connect</p>
-            <h2>Stay close to the garden.</h2>
-            <p>
-              For company updates, cultivation news, and general inquiries,
-              connect with Tiger Gardens on social.
-            </p>
-          </div>
-          <div className="connect-details">
-            <p className="location">Lewiston, California</p>
-            <div className="social-links" aria-label="Tiger Gardens social media">
-              {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
-                  {link.label} <span aria-hidden="true">↗</span>
-                </a>
-              ))}
-            </div>
-          </div>
+      <section className="photo-quote">
+        <div className="photo-quote-shade" aria-hidden="true" />
+        <div className="photo-quote-content">
+          <p className="overline">The Tiger Gardens way</p>
+          <blockquote>
+            “Grow something you can stand behind.”
+          </blockquote>
         </div>
       </section>
 
-      <section className="careers page-width" id="careers">
+      <section className="connect section-wrap" id="connect">
         <div>
-          <p className="eyebrow">Careers</p>
-          <h2>Grow with us.</h2>
+          <div className="section-index">03 / Connect</div>
+          <h2>Stay close to the garden.</h2>
         </div>
-        <div>
+        <div className="connect-copy">
           <p>
-            Interested in being part of the Tiger Gardens team? Introduce
-            yourself and watch our social channels for opportunities.
+            Follow along for company updates, cultivation news, and the changing
+            seasons at Tiger Gardens.
           </p>
-          <a
-            className="text-link"
-            href="https://www.instagram.com/tigergardens/?hl=en"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Message us on Instagram <span aria-hidden="true">↗</span>
-          </a>
+          <div className="social-links" aria-label="Tiger Gardens social media">
+            {socialLinks.map((link) => (
+              <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+                <span>{link.label}</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+          <p className="connect-location">Lewiston, California</p>
         </div>
       </section>
 
-      <footer className="site-footer">
-        <div className="page-width footer-inner">
-          <a className="brand footer-brand" href="#top">
-            <span className="brand-mark" aria-hidden="true">TG</span>
-            <span>
-              <strong>Tiger Gardens</strong>
-              <small>Trinity County, California</small>
-            </span>
-          </a>
-          <p>© {new Date().getFullYear()} Tiger Gardens. All rights reserved.</p>
-        </div>
+      <footer className="footer">
+        <a className="wordmark" href="#top">Tiger Gardens</a>
+        <p>Trinity County, California · Est. 2018</p>
+        <p>© {new Date().getFullYear()} Tiger Gardens</p>
       </footer>
     </main>
   );
