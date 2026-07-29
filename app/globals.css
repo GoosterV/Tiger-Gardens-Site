@@ -61,13 +61,13 @@ button { font: inherit; }
 .hero-photo-main figcaption { position: absolute; z-index: 1; right: 10%; bottom: 9%; left: 10%; color: var(--cream); font-size: 10px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
 .hero-logo-main { width: min(58vw, 780px); position: absolute; z-index: 2; top: 49%; left: 50%; display: grid; place-items: center; margin: 0; transform: translate(calc(-50% + var(--mouse-x) * 11px), calc(-46% + var(--mouse-y) * 11px)) rotate(-2deg); }
 .hero-logo-main img { width: 100%; height: auto; display: block; object-fit: contain; filter: drop-shadow(10px 12px 0 rgba(23,49,42,0.2)); }
-.hero-photo-relocated { width: clamp(410px, 42vw, 560px); aspect-ratio: 1; z-index: 1; right: -8%; bottom: -12%; border-radius: 50% 50% 44% 56% / 43% 54% 46% 57%; transform: translate(calc(var(--mouse-x) * -17px), calc(var(--mouse-y) * 17px)) rotate(5deg); }
+.hero-photo-relocated { width: clamp(410px, 42vw, 560px); aspect-ratio: 1; z-index: 1; right: -2%; bottom: -3%; border-radius: 50% 50% 44% 56% / 43% 54% 46% 57%; transform: translate(calc(var(--mouse-x) * -17px), calc(var(--mouse-y) * 17px)) rotate(5deg); }
 .hero-photo-relocated::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(5,19,14,0.56)); }
 .hero-photo-relocated figcaption { position: absolute; z-index: 1; right: 10%; bottom: 9%; left: 10%; color: var(--cream); font-size: 8px; font-weight: 900; letter-spacing: 0.07em; line-height: 1.2; text-transform: uppercase; }
 .hero-photo-small { width: clamp(380px, 42vw, 560px); aspect-ratio: 1; z-index: 1; border-radius: 52% 48% 57% 43% / 43% 57% 43% 57%; }
-.hero-photo-small.fourth { top: -8%; left: -11%; transform: translate(calc(var(--mouse-x) * 24px), calc(var(--mouse-y) * 17px)) rotate(-10deg); }
-.hero-photo-small.first { top: -7%; right: -12%; transform: translate(calc(var(--mouse-x) * -24px), calc(var(--mouse-y) * -17px)) rotate(13deg); }
-.hero-photo-small.second { bottom: -14%; left: -10%; transform: translate(calc(var(--mouse-x) * 21px), calc(var(--mouse-y) * -18px)) rotate(-12deg); }
+.hero-photo-small.fourth { top: 2%; left: -2%; transform: translate(calc(var(--mouse-x) * 24px), calc(var(--mouse-y) * 17px)) rotate(-10deg); }
+.hero-photo-small.first { top: 2%; right: -2%; transform: translate(calc(var(--mouse-x) * -24px), calc(var(--mouse-y) * -17px)) rotate(13deg); }
+.hero-photo-small.second { bottom: -3%; left: -2%; transform: translate(calc(var(--mouse-x) * 21px), calc(var(--mouse-y) * -18px)) rotate(-12deg); }
 .hero-badge { width: clamp(95px, 10vw, 150px); aspect-ratio: 1; position: absolute; z-index: 6; right: 23%; bottom: 19%; display: grid; place-items: center; border-radius: 49% 51% 45% 55% / 44% 56% 44% 56%; color: var(--forest); background: var(--lime); transform: translate(calc(var(--mouse-x) * -17px), calc(var(--mouse-y) * 17px)) rotate(9deg); }
 .hero-badge.hero-crest { width: clamp(150px, 15vw, 230px); aspect-ratio: auto; right: 8%; bottom: 9%; display: block; border-radius: 0; background: transparent; transform: translate(calc(var(--mouse-x) * -17px), calc(var(--mouse-y) * 17px)) rotate(5deg); }
 .hero-crest img { width: 100%; height: auto; display: block; filter: drop-shadow(7px 8px 0 rgba(23,49,42,0.18)); }
@@ -215,12 +215,12 @@ button { font: inherit; }
   .hero-photo-main { width: 85vw; top: 55%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
   .hero-logo-main { width: min(88vw, 470px); top: 53%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
   .hero-photo-small { width: 240px; box-shadow: 4px 4px 0 var(--forest); }
-  .hero-photo-small.fourth { top: 5%; left: -27%; }
-  .hero-photo-small.first { top: 7%; right: -28%; }
-  .hero-photo-small.second { bottom: -6%; left: -27%; }
+  .hero-photo-small.fourth { top: 9%; left: -11%; }
+  .hero-photo-small.first { top: 10%; right: -12%; }
+  .hero-photo-small.second { bottom: -1%; left: -11%; }
   .hero-badge { width: 101px; right: 4%; bottom: 17%; }
   .hero-badge.hero-crest { width: 128px; right: 2%; bottom: 8%; }
-  .hero-photo-relocated { width: 250px; right: -28%; bottom: -6%; }
+  .hero-photo-relocated { width: 250px; right: -12%; bottom: -1%; }
   .hero-status-card { left: 15px; bottom: 7%; transform: scale(0.82) rotate(-3deg); transform-origin: bottom left; }
   .scroll-prompt { display: none; }
   .tg-story-section { min-height: auto; grid-template-columns: 1fr; gap: 38px; padding: 90px 24px; }
