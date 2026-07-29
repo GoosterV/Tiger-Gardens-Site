@@ -4,6 +4,19 @@ const socialLinks = [
   { label: "X", href: "https://www.x.com/TigerGardens" },
 ];
 
+const gardenPhotos = [
+  { src: "/garden-01.webp", alt: "Flowering plants across the Tiger Gardens field" },
+  { src: "/garden-02.webp", alt: "Flowering plants in the Trinity County garden" },
+  { src: "/garden-03.webp", alt: "Garden beds framed by a Trinity County ridgeline" },
+  { src: "/garden-04.webp", alt: "Early-season garden rows at Tiger Gardens" },
+  { src: "/garden-05.webp", alt: "Cultivated rows in the Tiger Gardens field" },
+  { src: "/garden-06.webp", alt: "Tiger Gardens field and surrounding hills" },
+  { src: "/garden-07.webp", alt: "Tiger Gardens field in evening light" },
+  { src: "/garden-08.webp", alt: "Flowering garden at sunset in Trinity County" },
+  { src: "/garden-09.webp", alt: "Green and purple plants along a central garden row" },
+  { src: "/garden-10.webp", alt: "Green and purple garden blocks at Tiger Gardens" },
+];
+
 export default function Home() {
   return (
     <main className="home" id="top">
@@ -15,6 +28,7 @@ export default function Home() {
           </a>
           <nav aria-label="Primary navigation">
             <a href="#story">The story</a>
+            <a href="#field-notes">Field notes</a>
             <a href="#garden">The garden</a>
             <a href="#connect">Connect</a>
           </nav>
@@ -57,8 +71,8 @@ export default function Home() {
 
       <section className="aerial-film" aria-label="Tiger Gardens aerial garden film">
         <div className="film-frame">
-          {/* A silent background loop keeps the garden film light on mobile connections. */}
-          <video className="film-video" autoPlay muted loop playsInline preload="metadata">
+          {/* A silent background loop keeps the focus on the garden. */}
+          <video className="film-video" autoPlay muted loop playsInline preload="metadata" poster="/garden-09.webp">
             <source src="/garden-aerial.mp4" type="video/mp4" />
           </video>
           <div className="film-shade" aria-hidden="true" />
@@ -76,8 +90,37 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="field-notes" id="field-notes">
+        <div className="section-wrap field-notes-header">
+          <div className="section-index">02 / Field notes</div>
+          <div>
+            <p className="overline">This season at Tiger Gardens</p>
+            <h2>Green on one side. Purple on the other.</h2>
+            <p>
+              A closer look at the garden, the rows, and the place that holds it.
+            </p>
+          </div>
+        </div>
+        <div className="garden-gallery" aria-label="Tiger Gardens field photography">
+          {gardenPhotos.map((photo, index) => (
+            <figure className="garden-photo" key={photo.src}>
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                loading={index < 2 ? "eager" : "lazy"}
+                decoding="async"
+              />
+              <figcaption>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span>Field note</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <section className="garden-index section-wrap" id="garden">
-        <div className="section-index">02 / The garden</div>
+        <div className="section-index">03 / The garden</div>
         <div className="garden-index-main">
           <p className="overline">What is growing next</p>
           <h2>Follow the garden as it takes shape.</h2>
@@ -99,7 +142,7 @@ export default function Home() {
       </section>
 
       <section className="cultivation section-wrap">
-        <div className="section-index">03 / How we work</div>
+        <div className="section-index">04 / How we work</div>
         <div className="cultivation-main">
           <p className="overline">Season after season</p>
           <h2>Grown with care. Defined by place.</h2>
@@ -125,7 +168,7 @@ export default function Home() {
 
       <section className="connect section-wrap" id="connect">
         <div>
-          <div className="section-index">04 / Connect</div>
+          <div className="section-index">05 / Connect</div>
           <h2>Stay close to the garden.</h2>
         </div>
         <div className="connect-copy">
