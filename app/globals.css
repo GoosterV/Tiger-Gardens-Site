@@ -218,6 +218,9 @@ button { font: inherit; }
 .tg-product-board .static-action { grid-column: 1 / -1; margin: 20px 25px 25px; }
 
 .merch-hero { color: var(--cream); background: linear-gradient(135deg, var(--forest-deep), var(--forest) 55%, var(--orange)); }
+.merch-page > .tg-topbar { color: var(--cream); }
+.merch-page > .tg-topbar nav a { color: var(--cream); text-shadow: 0 1px 8px rgba(5,19,14,0.45); }
+.merch-page > .tg-topbar nav a:hover, .merch-page > .tg-topbar nav a:focus-visible { color: var(--lime); }
 .merch-hero h1 span { color: var(--lime); }
 .merch-hero > div { color: rgba(232,224,184,0.78); }
 .merch-catalog { width: min(100% - 60px, 1420px); margin: clamp(70px, 10vw, 140px) auto; }
@@ -300,6 +303,7 @@ button { font: inherit; }
   .tg-topbar nav { width: 100%; position: absolute; top: 70px; left: 0; display: flex; gap: 0; border: 2px solid var(--forest); background: rgba(255, 250, 242, 0.94); box-shadow: 3px 3px 0 rgba(23,49,42,0.24); }
   .tg-topbar nav a { flex: 1; min-height: 33px; display: grid; place-items: center; padding: 7px 5px; border-right: 1px solid rgba(23,49,42,0.32); font-size: 8px; letter-spacing: 0.045em; }
   .tg-topbar nav a:last-child { border-right: 0; }
+  .merch-page > .tg-topbar nav { border-color: var(--cream); background: rgba(23,49,42,0.94); box-shadow: 3px 3px 0 rgba(232,224,184,0.22); }
   .tg-inventory-link { padding: 9px 10px; font-size: 8px; }
   .tg-hero-scene { min-height: 760px; padding: 132px 18px 50px; }
   .scene-grid { background-size: 42px 42px; }
