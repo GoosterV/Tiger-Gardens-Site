@@ -37,29 +37,13 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
           <article>
             <span>Aromatic direction</span>
             <h3>{strain.aroma}</h3>
-            <p>Our cultivar pages describe the genetics and character of each selection. Actual harvest appearance, aroma and lab results can vary by run.</p>
+            <p>{strain.aromaNote}</p>
           </article>
         </div>
 
         <aside className="strain-profile-note">
           <p>These profiles capture the defining traits of the current Tiger Gardens cultivars. Potency figures are typical cultivar ranges; each harvest has its own final lab results.</p>
         </aside>
-      </section>
-
-      <section className="strain-grower-section">
-        <div className="strain-grower-heading">
-          <p>{strain.number} / Cultivation details</p>
-          <h2>GROW<br /><span>NOTES.</span></h2>
-        </div>
-        <div className="strain-grower-grid">
-          {strain.cultivationNotes.map((note) => (
-            <article key={note.label}>
-              <span>{note.label}</span>
-              <h3>{note.title}</h3>
-              <p>{note.body}</p>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section className="strain-detail-next">
