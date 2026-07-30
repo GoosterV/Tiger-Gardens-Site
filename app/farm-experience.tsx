@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState, type PointerEvent } from "react";
-
-const cultivars = ["Trinity Blizzard", "London Truffle", "Tree Flip"];
+import { strains } from "./strains/strain-data";
 
 const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/tigergardens/?hl=en" },
@@ -70,7 +69,7 @@ export default function FarmExperience() {
             <img src="/garden-09.webp" alt="Green plants on the left and purple plants on the right in a Tiger Gardens field row" />
             <figcaption>Field notes / 2026</figcaption>
           </figure>
-          <a className="hero-status-card" href="/inventory"><span>Current garden</span><strong>03</strong><em>cultivars</em><b aria-hidden="true">↗</b></a>
+          <a className="hero-status-card" href="/inventory"><span>Current garden</span><strong>04</strong><em>cultivars</em><b aria-hidden="true">↗</b></a>
           <a className="scroll-prompt" href="#story">Scroll to explore <span aria-hidden="true">↓</span></a>
         </section>
 
@@ -95,10 +94,10 @@ export default function FarmExperience() {
         <section className="tg-cultivar-section" id="garden">
           <div className="cultivar-top fx-reveal"><p>02 / Current selection</p><h2>IN THE FIELD<br /><span>RIGHT NOW.</span></h2><a href="/inventory">Live inventory <span aria-hidden="true">↗</span></a></div>
           <div className="cultivar-grid">
-            {cultivars.map((cultivar, index) => (
-              <a className={`cultivar-card card-${index + 1} fx-reveal`} href="/strains" key={cultivar}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{cultivar}</strong>
+            {strains.map((cultivar) => (
+              <a className={`cultivar-card card-${Number(cultivar.number)} fx-reveal`} href={`/strains/${cultivar.id}`} key={cultivar.id}>
+                <span>{cultivar.number}</span>
+                <strong>{cultivar.name}</strong>
                 <b aria-hidden="true">↗</b>
               </a>
             ))}
