@@ -1,4 +1,5 @@
 import type { StrainProfile } from "./strain-data";
+import PhotoRotator from "../photo-rotator";
 
 export default function StrainProfilePage({ strain }: { strain: StrainProfile }) {
   return (
@@ -13,6 +14,14 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
         <p>{strain.eyebrow}</p>
         <h1>{strain.name}</h1>
         <div>{strain.description}</div>
+      </section>
+
+      <section className="strain-photo-stage" aria-label={`${strain.name} photography`}>
+        <p>{strain.name} / From the Tiger Gardens archive</p>
+        <figure className="strain-floating-photo strain-floating-photo-main">
+          <PhotoRotator photos={strain.photos} alt={`${strain.name} flower grown and photographed at Tiger Gardens`} />
+        </figure>
+        <div className="strain-photo-mark" aria-hidden="true">{strain.number}</div>
       </section>
 
       <section className="strain-profile-body">

@@ -2,6 +2,12 @@
 
 import { useEffect, useState, type PointerEvent } from "react";
 import { strains } from "./strains/strain-data";
+import PhotoRotator from "./photo-rotator";
+
+const heroPhotos = Array.from(
+  { length: 24 },
+  (_, index) => `/photo-rotation/hero-${String(index + 1).padStart(2, "0")}.jpg`,
+);
 
 const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/tigergardens/?hl=en" },
@@ -62,11 +68,11 @@ export default function FarmExperience() {
           <figure className="hero-logo-main" aria-label="Tiger Gardens crest">
             <img src="/tiger-gardens-logo.png" alt="Tiger Gardens, Trinity County, established 2018" />
           </figure>
-          <figure className="hero-photo hero-photo-small fourth"><img src="/garden-top-left.jpg" alt="A close-up Tiger Gardens flower photographed against a warm orange background" /></figure>
-          <figure className="hero-photo hero-photo-small first"><img src="/garden-04.webp" alt="Sunlit rows at Tiger Gardens" /></figure>
-          <figure className="hero-photo hero-photo-small second"><img src="/garden-08.webp" alt="Sunlight over the Tiger Gardens field" /></figure>
+          <figure className="hero-photo hero-photo-small fourth"><PhotoRotator photos={heroPhotos} offset={0} interval={6100} alt="Real flower photography from Tiger Gardens" /></figure>
+          <figure className="hero-photo hero-photo-small first"><PhotoRotator photos={heroPhotos} offset={6} interval={6700} alt="Real farm photography from Tiger Gardens" /></figure>
+          <figure className="hero-photo hero-photo-small second"><PhotoRotator photos={heroPhotos} offset={12} interval={7300} alt="A view from the Tiger Gardens photo archive" /></figure>
           <figure className="hero-photo hero-photo-relocated">
-            <img src="/garden-09.webp" alt="Green plants on the left and purple plants on the right in a Tiger Gardens field row" />
+            <PhotoRotator photos={heroPhotos} offset={18} interval={7900} alt="Seasonal photography from the Tiger Gardens field" />
             <figcaption>Field notes / 2026</figcaption>
           </figure>
           <a className="hero-status-card" href="/inventory"><span>Current garden</span><strong>04</strong><em>cultivars</em><b aria-hidden="true">↗</b></a>

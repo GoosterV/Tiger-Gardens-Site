@@ -12,6 +12,7 @@ export type StrainProfile = {
   structure: string;
   description: string;
   fieldNote: string;
+  photos: string[];
   tone: "blizzard" | "thirty-four" | "truffle" | "tree";
 };
 
@@ -30,6 +31,7 @@ export const strains: StrainProfile[] = [
     structure: "Dense, resin-forward flowers with deep color expression",
     description: "A frost-heavy selection where the dark, cookie-like Oreoz side meets the bright citrus lift of Lemon Iccee. The overall profile is dessert and fuel, sharpened by a clean lemon edge.",
     fieldNote: "A sturdy, compact plant with close spacing and a moderate stretch. The flowers finish chunky and tight, often showing a dramatic dark backdrop beneath the resin coverage.",
+    photos: ["/strains/oreo-blizzard/oreo-blizzard-01.jpg"],
     tone: "blizzard",
   },
   {
@@ -46,6 +48,7 @@ export const strains: StrainProfile[] = [
     structure: "Purple, golf-ball flowers with a high calyx-to-leaf ratio",
     description: "#34 is a color-forward cultivar with thick resin and a memorable grape-and-fuel identity. It combines saturated purple expression with dense, dessert-driven flower structure.",
     fieldNote: "The plant carries a manageable, branchy frame with medium stretch. Its defining visual is a field of tightly formed, intensely purple flowers set under a heavy frost layer.",
+    photos: ["/strains/number-34/number-34-01.jpg"],
     tone: "thirty-four",
   },
   {
@@ -62,6 +65,7 @@ export const strains: StrainProfile[] = [
     structure: "Compact, branchy plants with dense purple-frosted flowers",
     description: "London Truffle connects White Truffle's savory, resin-rich character with the polished pastry notes of London Pound Cake. It is a bold dessert cultivar with an earthy, fuel-leaning finish.",
     fieldNote: "A squat, tidy plant with close internodes and strong lateral branches. The finished flowers are dense and spade-shaped, with deep violet tones and a distinctive pale frost across the surface.",
+    photos: ["/strains/london-truffle/london-truffle-01.jpg"],
     tone: "truffle",
   },
   {
@@ -78,6 +82,7 @@ export const strains: StrainProfile[] = [
     structure: "Frosted, dense flowers with a vigorous, high-yielding character",
     description: "Tree Flip brings a bright Lemon Tree lead into Wedding Cake's creamy bakery-gas backbone. It is a vivid, lemon-forward cultivar with a sweet fuel edge and an intensely frosted finish.",
     fieldNote: "The plant has an energetic, productive shape and carries a well-filled flower set. At finish, the expression leans into dense frost, loud citrus and a strong visual contrast in the garden.",
+    photos: ["/strains/tree-flip/tree-flip-01.jpg"],
     tone: "tree",
   },
 ];
