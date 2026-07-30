@@ -345,6 +345,22 @@ button { font: inherit; }
   .strain-detail-next { min-height: 400px; }
 }
 
+/* Desktop hero is a fixed artboard: resizing the browser crops the scene rather
+   than recalculating the logo and floating-photo composition. */
+@media (min-width: 641px) {
+  .tg-hero-scene { height: 1320px; min-height: 1320px; }
+  .meta-left { top: 144px; left: calc(50% - 614px); }
+  .meta-right { right: calc(50% - 614px); bottom: 115px; }
+  .hero-logo-main { width: 780px; top: 647px; left: 50%; transform: translate(-50%, -46%) rotate(-2deg); }
+  .hero-photo-small { width: 560px; box-shadow: 7px 7px 0 var(--forest); }
+  .hero-photo-small.fourth { width: 415px; top: 66px; left: calc(50% - 697px); transform: rotate(-6deg); }
+  .hero-photo-small.first { top: 26px; right: auto; left: calc(50% + 165px); transform: rotate(13deg); }
+  .hero-photo-small.second { bottom: -40px; left: calc(50% - 725px); transform: rotate(-12deg); }
+  .hero-photo-relocated { width: 560px; right: auto; bottom: -40px; left: calc(50% + 165px); transform: rotate(5deg); }
+  .hero-status-card { left: calc(50% - 656px); bottom: 132px; transform: rotate(-3deg); }
+  .scroll-prompt { right: calc(50% - 628px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   .fx-reveal { opacity: 1; transform: none; }
