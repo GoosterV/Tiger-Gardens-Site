@@ -6,7 +6,7 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
     <main className="tg-static strain-detail">
       <header className="tg-topbar">
         <a className="tg-wordmark" href="/"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /><span>Tiger Gardens</span></a>
-        <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/strains">Cultivars</a><a href="/inventory">Inventory</a></nav>
+        <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/strains">Cultivars</a><a href="/inventory">Inventory</a><a href="/merch">Merch</a></nav>
         <a className="tg-inventory-link" href="/inventory">Live inventory <span aria-hidden="true">↗</span></a>
       </header>
 

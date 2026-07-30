@@ -54,7 +54,7 @@ export default function FarmExperience() {
       <main className={`tg-experience ${entered ? "has-entered" : ""}`} onPointerMove={moveScene}>
         <header className="tg-topbar">
           <a className="tg-wordmark" href="#top"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a>
-          <nav aria-label="Primary navigation"><a href="#story">Story</a><a href="/strains">Cultivars</a><a href="/inventory">Inventory</a></nav>
+          <nav aria-label="Primary navigation"><a href="#story">Story</a><a href="/strains">Cultivars</a><a href="/inventory">Inventory</a><a href="/merch">Merch</a></nav>
           <a className="tg-inventory-link" href="/inventory">Live inventory <span aria-hidden="true">↗</span></a>
         </header>
 
