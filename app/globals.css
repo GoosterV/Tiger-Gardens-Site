@@ -209,7 +209,7 @@ button { font: inherit; }
 .strain-detail-hero.tree { background: linear-gradient(135deg, #f0d180 0%, #c9dc93 47%, #739b73 100%); }
 .strain-profile-body { padding: clamp(90px, 12vw, 180px) max(7vw, 34px); background: var(--paper); }
 .strain-profile-heading { display: grid; grid-template-columns: 0.55fr 1.45fr; gap: 40px; margin-bottom: 72px; }
-.strain-profile-heading p, .strain-notes span, .strain-reference p { margin: 0; font-size: 10px; font-weight: 900; letter-spacing: 0.08em; line-height: 1.35; text-transform: uppercase; }
+.strain-profile-heading p, .strain-notes span, .strain-profile-note p { margin: 0; font-size: 10px; font-weight: 900; letter-spacing: 0.08em; line-height: 1.35; text-transform: uppercase; }
 .strain-profile-heading h2, .strain-detail-next h2 { margin: 0; font-size: clamp(64px, 10vw, 156px); font-weight: 950; letter-spacing: -0.08em; line-height: 0.73; text-transform: uppercase; }
 .strain-profile-heading h2 span, .strain-detail-next h2 span { color: var(--orange); }
 .strain-fact-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 2px solid var(--forest); background: var(--cream); }
@@ -225,9 +225,9 @@ button { font: inherit; }
 .strain-notes h3 { max-width: 530px; margin: 17px 0; font-size: clamp(30px, 4.1vw, 64px); font-weight: 950; letter-spacing: -0.07em; line-height: 0.81; text-transform: uppercase; }
 .strain-notes p { max-width: 570px; margin: 0; color: var(--ink-soft); font-size: clamp(15px, 1.3vw, 18px); }
 .strain-notes article:last-child p { color: rgba(255,250,242,0.75); }
-.strain-reference { display: flex; justify-content: space-between; align-items: flex-end; gap: 35px; margin-top: 13px; padding: 22px; border: 2px solid var(--forest); background: var(--lime); }
-.strain-reference p { max-width: 730px; font-size: 9px; }
-.strain-reference a, .strain-detail-next a { display: inline-flex; flex: none; gap: 10px; padding-bottom: 5px; border-bottom: 2px solid currentColor; font-size: 10px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
+.strain-profile-note { margin-top: 13px; padding: 22px; border: 2px solid var(--forest); background: var(--lime); }
+.strain-profile-note p { max-width: 780px; font-size: 9px; }
+.strain-detail-next a { display: inline-flex; flex: none; gap: 10px; padding-bottom: 5px; border-bottom: 2px solid currentColor; font-size: 10px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
 .strain-detail-next { min-height: 530px; display: grid; place-items: center; padding: 90px 26px; color: var(--cream); background: var(--forest-deep); text-align: center; }
 .strain-detail-next p { margin: 0 0 18px; color: var(--lime); font-size: 10px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
 .strain-detail-next h2 { margin-bottom: 35px; font-size: clamp(58px, 10vw, 145px); }
@@ -309,8 +309,7 @@ button { font: inherit; }
   .strain-fact-grid article:nth-child(n + 3) { border-bottom: 0; }
   .strain-notes { grid-template-columns: 1fr; }
   .strain-notes article { min-height: 270px; padding: 28px; }
-  .strain-reference { display: block; padding: 18px; }
-  .strain-reference a { margin-top: 19px; }
+  .strain-profile-note { padding: 18px; }
   .strain-detail-next { min-height: 440px; }
 }
 

@@ -23,9 +23,9 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
 
         <div className="strain-fact-grid" aria-label={`${strain.name} cultivar details`}>
           <article><span>Lineage</span><strong>{strain.lineage}</strong></article>
-          <article><span>Breeder / selection</span><strong>{strain.breeder}</strong></article>
+          <article><span>Cultivar type</span><strong>{strain.type}</strong></article>
           <article><span>Flower window</span><strong>{strain.flower}</strong></article>
-          <article><span>Nursery reference range</span><strong>{strain.referencePotency}</strong></article>
+          <article><span>Typical potency</span><strong>{strain.typicalPotency}</strong></article>
         </div>
 
         <div className="strain-notes">
@@ -37,13 +37,12 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
           <article>
             <span>Aromatic direction</span>
             <h3>{strain.aroma}</h3>
-            <p>Our cultivar pages describe the genetics and heritage of each selection. Actual harvest appearance, aroma and lab results can vary by run.</p>
+            <p>Our cultivar pages describe the genetics and character of each selection. Actual harvest appearance, aroma and lab results can vary by run.</p>
           </article>
         </div>
 
-        <aside className="strain-reference">
-          <p>Genetic reference adapted for Tiger Gardens from the source nursery that supplied these cultivars. Potency ranges are reference information only, not batch-specific Tiger Gardens lab results.</p>
-          <a href={strain.sourceUrl} target="_blank" rel="noreferrer">Read the nursery reference <span aria-hidden="true">↗</span></a>
+        <aside className="strain-profile-note">
+          <p>These profiles capture the defining traits of the current Tiger Gardens cultivars. Potency figures are typical cultivar ranges; each harvest has its own final lab results.</p>
         </aside>
       </section>
 
