@@ -39,7 +39,7 @@ export default function FarmExperience() {
       {!entered && (
         <div className="tg-intro" role="dialog" aria-label="Enter Tiger Gardens">
           <div className="intro-pulse" aria-hidden="true" />
-          <img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" />
+          <img src="/tiger-gardens-logo.png" alt="Tiger Gardens" />
           <p>Trinity County, California</p>
           <button type="button" onClick={() => setEntered(true)}>Enter the garden <span aria-hidden="true">↘</span></button>
         </div>
@@ -47,7 +47,7 @@ export default function FarmExperience() {
 
       <main className={`tg-experience ${entered ? "has-entered" : ""}`} onPointerMove={moveScene}>
         <header className="tg-topbar">
-          <a className="tg-wordmark" href="#top"><img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" /></a>
+          <a className="tg-wordmark" href="#top"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a>
           <nav aria-label="Primary navigation"><a href="#story">Story</a><a href="/strains">Cultivars</a><a href="/inventory">Inventory</a></nav>
           <a className="tg-inventory-link" href="/inventory">Live inventory <span aria-hidden="true">↗</span></a>
         </header>
@@ -60,7 +60,7 @@ export default function FarmExperience() {
           <p className="scene-meta meta-left">Trinity County<br />California</p>
           <p className="scene-meta meta-right">Sun-grown<br />Est. 2018</p>
           <figure className="hero-logo-main" aria-label="Tiger Gardens crest">
-            <img src="/tiger-gardens-mark.webp" alt="Tiger Gardens, Trinity County, established 2018" />
+            <img src="/tiger-gardens-logo.png" alt="Tiger Gardens, Trinity County, established 2018" />
           </figure>
           <figure className="hero-photo hero-photo-small fourth"><img src="/garden-top-left.jpg" alt="A close-up Tiger Gardens flower photographed against a warm orange background" /></figure>
           <figure className="hero-photo hero-photo-small first"><img src="/garden-04.webp" alt="Sunlit rows at Tiger Gardens" /></figure>
@@ -128,7 +128,7 @@ export default function FarmExperience() {
           <div>{socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer"><span>{link.label}</span><span aria-hidden="true">↗</span></a>)}</div>
         </section>
 
-        <footer className="tg-footer"><a className="tg-wordmark" href="#top"><img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" /></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
+        <footer className="tg-footer"><a className="tg-wordmark" href="#top"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
       </main>
     </>
   );

@@ -4,7 +4,7 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
   return (
     <main className="tg-static strain-detail">
       <header className="tg-topbar">
-        <a className="tg-wordmark" href="/"><img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" /><span>Tiger Gardens</span></a>
+        <a className="tg-wordmark" href="/"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /><span>Tiger Gardens</span></a>
         <nav aria-label="Primary navigation"><a href="/">Home</a><a href="/strains">Cultivars</a><a href="/inventory">Inventory</a></nav>
         <a className="tg-inventory-link" href="/inventory">Live inventory <span aria-hidden="true">↗</span></a>
       </header>
@@ -52,7 +52,7 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
         <a href="/inventory">Open live inventory <span aria-hidden="true">↗</span></a>
       </section>
 
-      <footer className="tg-footer"><a className="tg-wordmark" href="/"><img src="/tiger-gardens-mark.webp" alt="Tiger Gardens" /><span>Tiger Gardens</span></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
+      <footer className="tg-footer"><a className="tg-wordmark" href="/"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /><span>Tiger Gardens</span></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
     </main>
   );
 }
