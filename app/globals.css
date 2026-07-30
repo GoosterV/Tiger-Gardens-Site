@@ -352,14 +352,19 @@ button { font: inherit; }
   .meta-left { top: 144px; left: calc(50% - 614px); }
   .meta-right { right: calc(50% - 614px); bottom: 115px; }
   .hero-logo-main { width: 780px; top: 647px; left: 50%; transform: translate(-50%, -46%) rotate(-2deg); }
-  .hero-photo-small { width: 560px; box-shadow: 7px 7px 0 var(--forest); }
-  .hero-photo-small.fourth { width: 415px; top: 66px; left: calc(50% - 697px); transform: rotate(-6deg); }
-  .hero-photo-small.first { top: 26px; right: auto; left: calc(50% + 165px); transform: rotate(13deg); }
-  .hero-photo-small.second { bottom: -40px; left: calc(50% - 725px); transform: rotate(-12deg); }
-  .hero-photo-relocated { width: 560px; right: auto; bottom: -40px; left: calc(50% + 165px); transform: rotate(5deg); }
+  .hero-photo-small { width: 560px; box-shadow: 7px 7px 0 var(--forest); will-change: transform; }
+  .hero-photo-small.fourth { width: 415px; top: 66px; left: calc(50% - 697px); animation: float-fourth 8.5s ease-in-out infinite; }
+  .hero-photo-small.first { top: 26px; right: auto; left: calc(50% + 165px); animation: float-first 10s ease-in-out infinite; }
+  .hero-photo-small.second { bottom: -40px; left: calc(50% - 725px); animation: float-second 9s ease-in-out infinite; }
+  .hero-photo-relocated { width: 560px; right: auto; bottom: -40px; left: calc(50% + 165px); animation: float-relocated 11s ease-in-out infinite; will-change: transform; }
   .hero-status-card { left: calc(50% - 656px); bottom: 132px; transform: rotate(-3deg); }
   .scroll-prompt { right: calc(50% - 628px); }
 }
+
+@keyframes float-fourth { 0%, 100% { transform: translate3d(0, 0, 0) rotate(-6deg); } 50% { transform: translate3d(0, -9px, 0) rotate(-5deg); } }
+@keyframes float-first { 0%, 100% { transform: translate3d(0, 0, 0) rotate(13deg); } 50% { transform: translate3d(0, 10px, 0) rotate(12deg); } }
+@keyframes float-second { 0%, 100% { transform: translate3d(0, 0, 0) rotate(-12deg); } 50% { transform: translate3d(0, -8px, 0) rotate(-13deg); } }
+@keyframes float-relocated { 0%, 100% { transform: translate3d(0, 0, 0) rotate(5deg); } 50% { transform: translate3d(0, 9px, 0) rotate(6deg); } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
