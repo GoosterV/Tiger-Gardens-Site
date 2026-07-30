@@ -59,13 +59,13 @@ button { font: inherit; }
 .hero-photo-main { width: min(47vw, 670px); aspect-ratio: 0.93; top: 49%; left: 50%; border-radius: 48% 52% 42% 58% / 44% 39% 61% 56%; transform: translate(calc(-50% + var(--mouse-x) * 14px), calc(-46% + var(--mouse-y) * 14px)) rotate(-2deg); }
 .hero-photo-main::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(5,19,14,0.56)); }
 .hero-photo-main figcaption { position: absolute; z-index: 1; right: 10%; bottom: 9%; left: 10%; color: var(--cream); font-size: 10px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
-.hero-logo-main { width: min(58vw, 780px); position: absolute; z-index: 2; top: 49%; left: 50%; display: grid; place-items: center; margin: 0; transform: translate(calc(-50% + var(--mouse-x) * 11px), calc(-46% + var(--mouse-y) * 11px)) rotate(-2deg); }
+.hero-logo-main { width: 780px; position: absolute; z-index: 2; top: 49%; left: 50%; display: grid; place-items: center; margin: 0; transform: translate(calc(-50% + var(--mouse-x) * 11px), calc(-46% + var(--mouse-y) * 11px)) rotate(-2deg); }
 .hero-logo-main img { width: 100%; height: auto; display: block; object-fit: contain; filter: drop-shadow(10px 12px 0 rgba(23,49,42,0.2)); }
-.hero-photo-relocated { width: clamp(410px, 42vw, 560px); aspect-ratio: 1; z-index: 1; right: -2%; bottom: -3%; border-radius: 50% 50% 44% 56% / 43% 54% 46% 57%; transform: translate(calc(var(--mouse-x) * -17px), calc(var(--mouse-y) * 17px)) rotate(5deg); }
+.hero-photo-relocated { width: 560px; aspect-ratio: 1; z-index: 1; right: -2%; bottom: -3%; border-radius: 50% 50% 44% 56% / 43% 54% 46% 57%; transform: translate(calc(var(--mouse-x) * -17px), calc(var(--mouse-y) * 17px)) rotate(5deg); }
 .hero-photo-relocated::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(5,19,14,0.56)); }
 .hero-photo-relocated figcaption { position: absolute; z-index: 1; right: 10%; bottom: 9%; left: 10%; color: var(--cream); font-size: 8px; font-weight: 900; letter-spacing: 0.07em; line-height: 1.2; text-transform: uppercase; }
-.hero-photo-small { width: clamp(380px, 42vw, 560px); aspect-ratio: 1; z-index: 1; border-radius: 52% 48% 57% 43% / 43% 57% 43% 57%; }
-.hero-photo-small.fourth { width: clamp(275px, 31vw, 455px); aspect-ratio: 2 / 3; top: 5%; left: 0; background: #f78a00; transform: translate(calc(var(--mouse-x) * 24px), calc(var(--mouse-y) * 17px)) rotate(-6deg); }
+.hero-photo-small { width: 560px; aspect-ratio: 1; z-index: 1; border-radius: 52% 48% 57% 43% / 43% 57% 43% 57%; }
+.hero-photo-small.fourth { width: 415px; aspect-ratio: 2 / 3; top: 5%; left: 0; background: #f78a00; transform: translate(calc(var(--mouse-x) * 24px), calc(var(--mouse-y) * 17px)) rotate(-6deg); }
 .hero-photo-small.fourth img { object-fit: contain; }
 .hero-photo-small.first { top: 2%; right: -2%; transform: translate(calc(var(--mouse-x) * -24px), calc(var(--mouse-y) * -17px)) rotate(13deg); }
 .hero-photo-small.second { bottom: -3%; left: -2%; transform: translate(calc(var(--mouse-x) * 21px), calc(var(--mouse-y) * -18px)) rotate(-12deg); }
@@ -216,7 +216,7 @@ button { font: inherit; }
   .hero-title { margin-top: -192px; }
   .hero-title h1 { font-size: clamp(67px, 20vw, 112px); line-height: 0.75; }
   .hero-photo-main { width: 85vw; top: 55%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
-  .hero-logo-main { width: min(88vw, 470px); top: 53%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
+  .hero-logo-main { width: 440px; top: 53%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
   .hero-photo-small { width: 240px; box-shadow: 4px 4px 0 var(--forest); }
   .hero-photo-small.fourth { width: 154px; top: 19%; left: -4%; }
   .hero-photo-small.first { width: 174px; top: 18%; right: -8%; }
@@ -274,7 +274,7 @@ button { font: inherit; }
   .tg-hero-scene { min-height: 700px; padding-top: 116px; }
   .meta-left { top: 113px; font-size: 7px; }
   .meta-right { right: 14px; bottom: 67px; font-size: 7px; }
-  .hero-logo-main { width: min(80vw, 350px); top: 52%; }
+  .hero-logo-main { width: 310px; top: 52%; }
   .hero-photo-small.fourth { width: 128px; top: 20%; left: -5%; }
   .hero-photo-small.first { width: 145px; top: 20%; right: -9%; }
   .hero-photo-small.second { width: 146px; bottom: 5%; left: -11%; }
