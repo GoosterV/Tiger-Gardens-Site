@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 
-const sources = ["/in-the-field-01.mp4", "/in-the-field-02.mp4"];
+const sources = [
+  "/in-the-field-01.mp4",
+  "/in-the-field-02.mp4",
+  "/in-the-field-03.mp4",
+];
 
 export default function StoryVideoPlaylist() {
   const [active, setActive] = useState(0);
