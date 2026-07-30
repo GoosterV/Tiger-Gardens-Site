@@ -1,21 +1,8 @@
 "use client";
 
-import { useEffect, useState, type PointerEvent } from "react";
-import BackgroundVideoPlaylist from "./background-video-playlist";
-import HeroPhotoDeck from "./hero-photo-deck";
+import { useEffect, useState } from "react";
+import StoryVideoPlaylist from "./story-video-playlist";
 import { strains } from "./strains/strain-data";
-
-const heroPhotos = Array.from(
-  { length: 24 },
-  (_, index) => `/photo-rotation/hero-${String(index + 1).padStart(2, "0")}.jpg`,
-);
-
-const mountainsVideo = [
-  "/mountains-drone-01.mp4",
-  "/mountains-drone-02.mp4",
-  "/mountains-drone-03.mp4",
-  "/mountains-drone-04.mp4",
-];
 
 const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/tigergardens/?hl=en" },
@@ -40,12 +27,11 @@ export default function FarmExperience() {
     return () => observer.disconnect();
   }, []);
 
-  function moveScene(event: PointerEvent<HTMLElement>) {
-    if (event.pointerType === "touch") return;
-    const x = ((event.clientX / window.innerWidth) - 0.5).toFixed(3);
-    const y = ((event.clientY / window.innerHeight) - 0.5).toFixed(3);
-    event.currentTarget.style.setProperty("--mouse-x", x);
-    event.currentTarget.style.setProperty("--mouse-y", y);
+  function enterGardens() {
+    setEntered(true);
+    window.requestAnimationFrame(() => {
+      document.querySelector("#story")?.scrollIntoView({ block: "start" });
+    });
   }
 
   return (
@@ -54,37 +40,20 @@ export default function FarmExperience() {
         <div className="tg-intro" role="dialog" aria-label="Enter Tiger Gardens">
           <div className="intro-pulse" aria-hidden="true" />
           <img src="/tiger-gardens-logo.png" alt="Tiger Gardens" />
+          <button type="button" onClick={enterGardens}>Enter the Gardens <span aria-hidden="true">↓</span></button>
           <p>Trinity County, California</p>
-          <button type="button" onClick={() => setEntered(true)}>Enter the garden <span aria-hidden="true">↘</span></button>
         </div>
       )}
 
-      <main className={`tg-experience ${entered ? "has-entered" : ""}`} onPointerMove={moveScene}>
+      <main className={`tg-experience ${entered ? "has-entered" : ""}`}>
         <header className="tg-topbar">
-          <a className="tg-wordmark" href="#top"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a>
+          <a className="tg-wordmark" href="#story"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a>
           <nav aria-label="Primary navigation"><a href="#story">Story</a><a href="/strains">Cultivars</a><a href="/inventory">Inventory</a><a href="/merch">Merch</a></nav>
           <a className="tg-inventory-link" href="/inventory">Live inventory <span aria-hidden="true">↗</span></a>
         </header>
 
-        <section className="tg-hero-scene" id="top">
-          <h1 className="tg-sr-only">Tiger Gardens</h1>
-          <div className="scene-grid" aria-hidden="true" />
-          <div className="scene-line line-one" aria-hidden="true" />
-          <div className="scene-line line-two" aria-hidden="true" />
-          <p className="scene-meta meta-left">Trinity County<br />California</p>
-          <p className="scene-meta meta-right">Sun-grown<br />Est. 2018</p>
-          <figure className="hero-logo-main" aria-label="Tiger Gardens crest">
-            <img src="/tiger-gardens-logo.png" alt="Tiger Gardens, Trinity County, established 2018" />
-          </figure>
-          <HeroPhotoDeck photos={heroPhotos} />
-          <a className="hero-status-card" href="/inventory"><span>Current garden</span><strong>04</strong><em>cultivars</em><b aria-hidden="true">↗</b></a>
-          <a className="scroll-prompt" href="#story">Scroll to explore <span aria-hidden="true">↓</span></a>
-        </section>
-
         <section className="tg-story-section" id="story">
-          <video className="story-bg-video" autoPlay muted loop playsInline preload="metadata" poster="/garden-09.webp">
-            <source src="/garden-aerial.mp4" type="video/mp4" />
-          </video>
+          <StoryVideoPlaylist />
           <div className="story-film-shade" aria-hidden="true" />
           <div className="story-index fx-reveal">01 <span>Current selection</span></div>
           <div className="story-main fx-reveal">
@@ -113,7 +82,7 @@ export default function FarmExperience() {
         </section>
 
         <section className="tg-mountains-film" id="garden" aria-label="Aerial view of Tiger Gardens">
-          <BackgroundVideoPlaylist sources={mountainsVideo} poster="/garden-09.webp" />
+          <img className="mountains-field-photo" src="/mountains-field-photo.jpg" alt="Tiger Gardens field beneath the Trinity County mountains at sunrise" />
           <div className="mountains-film-shade" aria-hidden="true" />
           <div className="mountains-film-content fx-reveal">
             <p>02 / Trinity County, California</p>
@@ -141,7 +110,7 @@ export default function FarmExperience() {
           <div>{socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer"><span>{link.label}</span><span aria-hidden="true">↗</span></a>)}</div>
         </section>
 
-        <footer className="tg-footer"><a className="tg-wordmark" href="#top"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
+        <footer className="tg-footer"><a className="tg-wordmark" href="#story"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
       </main>
     </>
   );
