@@ -80,6 +80,10 @@ export default function FarmExperience() {
         </section>
 
         <section className="tg-story-section" id="story">
+          <video className="story-bg-video" autoPlay muted loop playsInline preload="metadata" poster="/garden-09.webp">
+            <source src="/garden-aerial.mp4" type="video/mp4" />
+          </video>
+          <div className="story-film-shade" aria-hidden="true" />
           <div className="story-index fx-reveal">01 <span>Current selection</span></div>
           <div className="story-main fx-reveal">
             <h2>IN THE FIELD<br /><span>RIGHT NOW.</span></h2>
@@ -108,7 +112,7 @@ export default function FarmExperience() {
 
         <section className="tg-mountains-film" id="garden" aria-label="Aerial view of Tiger Gardens">
           <video autoPlay muted loop playsInline preload="metadata" poster="/garden-09.webp">
-            <source src="/garden-aerial.mp4" type="video/mp4" />
+            <source src="/mountains-drone-web.m4v" type="video/mp4" />
           </video>
           <div className="mountains-film-shade" aria-hidden="true" />
           <div className="mountains-film-content fx-reveal">
