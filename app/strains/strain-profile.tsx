@@ -46,6 +46,22 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
         </aside>
       </section>
 
+      <section className="strain-grower-section">
+        <div className="strain-grower-heading">
+          <p>{strain.number} / Cultivation details</p>
+          <h2>GROW<br /><span>NOTES.</span></h2>
+        </div>
+        <div className="strain-grower-grid">
+          {strain.cultivationNotes.map((note) => (
+            <article key={note.label}>
+              <span>{note.label}</span>
+              <h3>{note.title}</h3>
+              <p>{note.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="strain-detail-next">
         <p>Current garden / 2026</p>
         <h2>SEE WHAT&apos;S<br /><span>IN THE FIELD.</span></h2>
