@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, type PointerEvent } from "react";
-import { strains } from "./strains/strain-data";
 import PhotoRotator from "./photo-rotator";
 
 const heroPhotos = Array.from(
@@ -97,22 +96,16 @@ export default function FarmExperience() {
           <figure className="atlas-shot atlas-05 fx-reveal"><img src="/garden-02.webp" alt="A soft close view into the garden canopy" /></figure>
         </section>
 
-        <section className="tg-cultivar-section" id="garden">
-          <div className="cultivar-top fx-reveal"><p>02 / Current selection</p><h2>IN THE FIELD<br /><span>RIGHT NOW.</span></h2><a href="/inventory">Live inventory <span aria-hidden="true">↗</span></a></div>
-          <div className="cultivar-grid">
-            {strains.map((cultivar) => (
-              <a className={`cultivar-card card-${Number(cultivar.number)} fx-reveal`} href={`/strains/${cultivar.id}`} key={cultivar.id}>
-                <span>{cultivar.number}</span>
-                <strong>{cultivar.name}</strong>
-                <b aria-hidden="true">↗</b>
-              </a>
-            ))}
+        <section className="tg-mountains-film" id="garden" aria-label="Aerial view of Tiger Gardens">
+          <video autoPlay muted loop playsInline preload="metadata" poster="/garden-09.webp">
+            <source src="/garden-aerial.mp4" type="video/mp4" />
+          </video>
+          <div className="mountains-film-shade" aria-hidden="true" />
+          <div className="mountains-film-content fx-reveal">
+            <p>02 / Trinity County, California</p>
+            <h2>THE MOUNTAINS<br />SET THE <span>PACE.</span></h2>
+            <a href="/inventory">Live inventory <span aria-hidden="true">↗</span></a>
           </div>
-        </section>
-
-        <section className="tg-aerial-wrap fx-reveal" aria-label="Aerial view of Tiger Gardens">
-          <video autoPlay muted loop playsInline preload="metadata" poster="/garden-09.webp"><source src="/garden-aerial.mp4" type="video/mp4" /></video>
-          <div className="aerial-corner">Over the garden<br />Trinity County</div>
         </section>
 
         <section className="tg-practice-section">

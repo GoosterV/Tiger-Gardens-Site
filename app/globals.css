@@ -133,9 +133,15 @@ button { font: inherit; }
 .cultivar-card strong { position: relative; z-index: 1; max-width: 320px; font-size: clamp(31px, 4vw, 57px); font-weight: 950; letter-spacing: -0.065em; line-height: 0.82; text-transform: uppercase; }
 .cultivar-card b { position: relative; z-index: 1; align-self: flex-end; font-size: 25px; font-weight: 400; }
 
-.tg-aerial-wrap { width: min(100% - 60px, 1490px); position: relative; margin: clamp(75px, 10vw, 150px) auto; overflow: hidden; border: 3px solid var(--forest); border-radius: 32px 8px 31px 8px; background: var(--forest); transform: rotate(-0.4deg); }
-.tg-aerial-wrap video { width: 100%; display: block; aspect-ratio: 16 / 7; object-fit: cover; }
-.aerial-corner { position: absolute; right: 21px; bottom: 16px; color: var(--cream); font-size: 9px; font-weight: 900; letter-spacing: 0.08em; line-height: 1.2; text-align: right; text-transform: uppercase; text-shadow: 0 2px 8px rgba(0,0,0,0.66); }
+.tg-mountains-film { min-height: min(900px, 92svh); position: relative; display: grid; place-items: center; overflow: hidden; padding: clamp(110px, 14vw, 190px) max(7vw, 34px); color: var(--cream); background: var(--forest); }
+.tg-mountains-film > video { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+.mountains-film-shade { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(19,38,46,0.82) 0%, rgba(19,38,46,0.42) 58%, rgba(19,38,46,0.62) 100%); }
+.mountains-film-content { width: min(100%, 1400px); position: relative; z-index: 1; }
+.mountains-film-content p { margin: 0 0 24px; color: var(--lime); font-size: 10px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.mountains-film-content h2 { max-width: 1250px; margin: 0; font-size: clamp(68px, 11vw, 172px); font-weight: 950; letter-spacing: -0.075em; line-height: 0.76; text-transform: uppercase; text-shadow: 0 4px 30px rgba(0,0,0,0.28); }
+.mountains-film-content h2 span { color: var(--lime); }
+.mountains-film-content a { display: inline-flex; gap: 10px; margin-top: 42px; padding: 13px 16px; border: 2px solid var(--lime); color: var(--forest); background: var(--lime); font-size: 10px; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; transition: transform 160ms ease, box-shadow 160ms ease; }
+.mountains-film-content a:hover, .mountains-film-content a:focus-visible { box-shadow: 5px 5px 0 var(--cream); transform: translate(-3px, -3px); }
 
 .tg-practice-section { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(55px, 9vw, 150px); align-items: start; padding: clamp(110px, 14vw, 195px) max(7vw, 34px); background: var(--cream); }
 .practice-title { position: sticky; top: 34px; }
@@ -290,8 +296,8 @@ button { font: inherit; }
   .cultivar-top > a { justify-self: start; }
   .cultivar-grid { grid-template-columns: 1fr; margin-top: 45px; }
   .cultivar-card { min-height: 230px; }
-  .tg-aerial-wrap { width: min(100% - 28px, 1490px); margin: 70px auto; border-radius: 22px 6px 21px 6px; }
-  .tg-aerial-wrap video { aspect-ratio: 16 / 10; }
+  .tg-mountains-film { min-height: 650px; padding: 100px 24px 76px; }
+  .mountains-film-content h2 { font-size: clamp(62px, 16vw, 105px); }
   .tg-practice-section { grid-template-columns: 1fr; gap: 44px; padding: 90px 24px; }
   .practice-title { position: static; }
   .practice-list article { grid-template-columns: 35px 1fr; gap: 8px 12px; }
