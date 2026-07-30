@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type PointerEvent } from "react";
 import PhotoRotator from "./photo-rotator";
+import { strains } from "./strains/strain-data";
 
 const heroPhotos = Array.from(
   { length: 24 },
@@ -79,11 +80,20 @@ export default function FarmExperience() {
         </section>
 
         <section className="tg-story-section" id="story">
-          <div className="story-index fx-reveal">01 <span>The farm</span></div>
+          <div className="story-index fx-reveal">01 <span>Current selection</span></div>
           <div className="story-main fx-reveal">
-            <h2>THE MOUNTAINS<br />SET THE <span>PACE.</span></h2>
-            <p>Tiger Gardens began in Trinity County in 2018. We work with the season, the natural sunlight, and the land under our feet to grow cannabis that feels tied to a real place.</p>
-            <a className="tg-text-link" href="#garden">See what&apos;s growing <span aria-hidden="true">↘</span></a>
+            <h2>IN THE FIELD<br /><span>RIGHT NOW.</span></h2>
+            <p>Meet the four cultivars currently growing at Tiger Gardens, each shaped by the Trinity County season and selected for its own distinct character.</p>
+            <a className="tg-text-link" href="/strains">View cultivar menu <span aria-hidden="true">↗</span></a>
+          </div>
+          <div className="story-cultivar-grid">
+            {strains.map((cultivar) => (
+              <a className={`cultivar-card card-${Number(cultivar.number)} fx-reveal`} href={`/strains/${cultivar.id}`} key={cultivar.id}>
+                <span>{cultivar.number}</span>
+                <strong>{cultivar.name}</strong>
+                <b aria-hidden="true">↗</b>
+              </a>
+            ))}
           </div>
         </section>
 

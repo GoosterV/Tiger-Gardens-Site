@@ -97,6 +97,7 @@ button { font: inherit; }
 .story-main h2, .cultivar-top h2, .practice-title h2, .closing-content h2 { margin: 0 0 29px; font-size: clamp(55px, 8vw, 124px); font-weight: 950; letter-spacing: -0.075em; line-height: 0.76; text-transform: uppercase; }
 .story-main h2 span { color: var(--lime); }
 .story-main p { max-width: 630px; margin: 0 0 32px; color: rgba(255,254,247,0.75); font-size: clamp(16px, 1.45vw, 20px); }
+.story-cultivar-grid { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; margin-top: 18px; color: var(--forest); }
 .tg-text-link { display: inline-flex; gap: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--lime); color: var(--lime); font-size: 11px; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; }
 .tg-text-link span { font-size: 17px; line-height: 0.5; }
 
@@ -282,6 +283,7 @@ button { font: inherit; }
   .hero-status-card { left: 14px; bottom: 5%; transform: scale(0.74) rotate(-3deg); transform-origin: bottom left; }
   .scroll-prompt { display: none; }
   .tg-story-section { min-height: auto; grid-template-columns: 1fr; gap: 38px; padding: 90px 24px; }
+  .story-cultivar-grid { grid-column: auto; grid-template-columns: 1fr; margin-top: 8px; }
   .story-main h2, .cultivar-top h2, .practice-title h2 { font-size: clamp(51px, 15vw, 86px); }
   .tg-field-atlas { grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(4, minmax(180px, 1fr)); gap: 10px; padding: 64px 24px; }
   .atlas-label { grid-column: 1 / -1; grid-row: 1; min-height: 120px; flex-direction: row; align-items: flex-end; gap: 28px; }
