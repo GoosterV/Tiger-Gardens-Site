@@ -216,7 +216,8 @@ button { font: inherit; }
 .strain-photo-stage { min-height: 660px; position: relative; display: grid; place-items: center; overflow: hidden; padding: 90px 28px; background: var(--cream); }
 .strain-photo-stage > p { position: absolute; top: 38px; left: max(7vw, 34px); margin: 0; font-size: 10px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
 .strain-floating-photo { width: 520px; aspect-ratio: 0.92; position: relative; z-index: 1; overflow: hidden; margin: 0; border: 3px solid var(--forest); border-radius: 48% 52% 43% 57% / 44% 39% 61% 56%; background: var(--forest); box-shadow: 9px 9px 0 var(--forest); transform: rotate(-3deg); animation: strainFloat 8s ease-in-out infinite; }
-.strain-floating-photo img { width: 100%; height: 100%; object-fit: cover; }
+.strain-floating-photo .photo-rotator { inset: 10px; border-radius: inherit; overflow: hidden; background: var(--paper); }
+.strain-floating-photo .photo-rotator img { width: 100%; height: 100%; object-fit: contain; object-position: center; background: var(--paper); }
 .strain-photo-mark { position: absolute; right: max(8vw, 36px); bottom: 38px; color: var(--orange); font-size: clamp(90px, 17vw, 250px); font-weight: 950; letter-spacing: -0.1em; line-height: 0.75; opacity: 0.72; }
 .strain-profile-heading { display: grid; grid-template-columns: 0.55fr 1.45fr; gap: 40px; margin-bottom: 72px; }
 .strain-profile-heading p, .strain-notes span, .strain-profile-note p { margin: 0; font-size: 10px; font-weight: 900; letter-spacing: 0.08em; line-height: 1.35; text-transform: uppercase; }

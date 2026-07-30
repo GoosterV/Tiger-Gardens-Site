@@ -19,6 +19,8 @@ export default function PhotoRotator({
 
   useEffect(() => {
     if (photos.length < 2) return;
+    const randomizedStart = Math.floor(Math.random() * photos.length);
+    setActive(randomizedStart);
     const timer = window.setInterval(
       () => setActive((current) => (current + 1) % photos.length),
       interval,
@@ -34,7 +36,7 @@ export default function PhotoRotator({
           className={index === active ? "is-active" : ""}
           decoding="async"
           key={photo}
-          loading={index === offset ? "eager" : "lazy"}
+          loading={index === active ? "eager" : "lazy"}
           src={photo}
           alt={index === active ? alt : ""}
         />
