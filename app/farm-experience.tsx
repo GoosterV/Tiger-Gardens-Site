@@ -28,6 +28,7 @@ export default function FarmExperience() {
   }, []);
 
   function moveScene(event: PointerEvent<HTMLElement>) {
+    if (event.pointerType === "touch") return;
     const x = ((event.clientX / window.innerWidth) - 0.5).toFixed(3);
     const y = ((event.clientY / window.innerHeight) - 0.5).toFixed(3);
     event.currentTarget.style.setProperty("--mouse-x", x);

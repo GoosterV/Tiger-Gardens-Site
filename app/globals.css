@@ -202,27 +202,29 @@ button { font: inherit; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(23,49,42,0.38); } 70% { box-shadow: 0 0 0 16px rgba(23,49,42,0); } 100% { box-shadow: 0 0 0 0 rgba(23,49,42,0); } }
 
 @media (max-width: 820px) {
-  .tg-topbar { width: min(100% - 26px, 1480px); min-height: 86px; grid-template-columns: 1fr auto; }
+  .tg-topbar { width: min(100% - 26px, 1480px); min-height: 86px; grid-template-columns: 1fr auto; gap: 12px; }
   .tg-wordmark { font-size: 16px; }
   .tg-wordmark img { width: 54px; height: 54px; }
-  .tg-topbar nav { display: none; }
+  .tg-topbar nav { width: 100%; position: absolute; top: 70px; left: 0; display: flex; gap: 0; border: 2px solid var(--forest); background: rgba(255, 250, 242, 0.94); box-shadow: 3px 3px 0 rgba(23,49,42,0.24); }
+  .tg-topbar nav a { flex: 1; min-height: 33px; display: grid; place-items: center; padding: 7px 5px; border-right: 1px solid rgba(23,49,42,0.32); font-size: 8px; letter-spacing: 0.045em; }
+  .tg-topbar nav a:last-child { border-right: 0; }
   .tg-inventory-link { padding: 9px 10px; font-size: 8px; }
-  .tg-hero-scene { min-height: 740px; padding: 92px 18px 50px; }
+  .tg-hero-scene { min-height: 760px; padding: 132px 18px 50px; }
   .scene-grid { background-size: 42px 42px; }
-  .meta-left { top: 93px; left: 19px; }
+  .meta-left { top: 127px; left: 19px; }
   .meta-right { right: 19px; bottom: 83px; }
   .hero-title { margin-top: -192px; }
   .hero-title h1 { font-size: clamp(67px, 20vw, 112px); line-height: 0.75; }
   .hero-photo-main { width: 85vw; top: 55%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
   .hero-logo-main { width: min(88vw, 470px); top: 53%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
   .hero-photo-small { width: 240px; box-shadow: 4px 4px 0 var(--forest); }
-  .hero-photo-small.fourth { width: 168px; top: 10%; left: -2%; }
-  .hero-photo-small.first { top: 10%; right: -12%; }
-  .hero-photo-small.second { bottom: -1%; left: -11%; }
+  .hero-photo-small.fourth { width: 154px; top: 19%; left: -4%; }
+  .hero-photo-small.first { width: 174px; top: 18%; right: -8%; }
+  .hero-photo-small.second { width: 177px; bottom: 5%; left: -9%; }
   .hero-badge { width: 101px; right: 4%; bottom: 17%; }
   .hero-badge.hero-crest { width: 128px; right: 2%; bottom: 8%; }
-  .hero-photo-relocated { width: 250px; right: -12%; bottom: -1%; }
-  .hero-status-card { left: 15px; bottom: 7%; transform: scale(0.82) rotate(-3deg); transform-origin: bottom left; }
+  .hero-photo-relocated { width: 184px; right: -7%; bottom: 7%; }
+  .hero-status-card { left: 14px; bottom: 5%; transform: scale(0.74) rotate(-3deg); transform-origin: bottom left; }
   .scroll-prompt { display: none; }
   .tg-story-section { min-height: auto; grid-template-columns: 1fr; gap: 38px; padding: 90px 24px; }
   .story-main h2, .cultivar-top h2, .practice-title h2 { font-size: clamp(51px, 15vw, 86px); }
@@ -249,7 +251,7 @@ button { font: inherit; }
   .closing-content h2 { font-size: clamp(61px, 17vw, 103px); }
   .tg-social-section { grid-template-columns: 1fr; gap: 26px; padding: 48px 24px; }
   .tg-footer { grid-template-columns: 1fr; gap: 8px; min-height: auto; padding: 27px 24px; }
-  .tg-static-hero { min-height: 450px; padding: 98px 24px 55px; }
+  .tg-static-hero { min-height: 490px; padding: 148px 24px 55px; }
   .tg-static-hero h1 { font-size: clamp(55px, 15vw, 89px); }
   .tg-static-grid, .tg-inventory-board, .tg-product-board { width: min(100% - 48px, 1310px); margin: 70px auto; }
   .tg-static-grid { grid-template-columns: 1fr; }
@@ -261,6 +263,29 @@ button { font: inherit; }
   .tg-product-board { grid-template-columns: 1fr; }
   .tg-product-board article { min-height: 250px; border-right: 0; border-bottom: 2px solid var(--forest); }
   .tg-product-board h2 { font-size: 64px; }
+}
+
+@media (max-width: 520px) {
+  .tg-topbar { width: calc(100% - 20px); min-height: 68px; }
+  .tg-wordmark img { width: 46px; height: 46px; }
+  .tg-topbar nav { top: 61px; }
+  .tg-topbar nav a { min-height: 31px; font-size: 7px; }
+  .tg-inventory-link { max-width: 122px; padding: 8px 8px; line-height: 1.1; text-align: right; }
+  .tg-hero-scene { min-height: 700px; padding-top: 116px; }
+  .meta-left { top: 113px; font-size: 7px; }
+  .meta-right { right: 14px; bottom: 67px; font-size: 7px; }
+  .hero-logo-main { width: min(80vw, 350px); top: 52%; }
+  .hero-photo-small.fourth { width: 128px; top: 20%; left: -5%; }
+  .hero-photo-small.first { width: 145px; top: 20%; right: -9%; }
+  .hero-photo-small.second { width: 146px; bottom: 5%; left: -11%; }
+  .hero-photo-relocated { width: 154px; right: -9%; bottom: 7%; }
+  .hero-status-card { left: 9px; bottom: 3%; transform: scale(0.62) rotate(-3deg); }
+  .tg-story-section, .tg-cultivar-section, .tg-practice-section { padding-right: 19px; padding-left: 19px; }
+  .tg-field-atlas { padding-right: 19px; padding-left: 19px; }
+  .tg-aerial-wrap { width: calc(100% - 24px); }
+  .tg-social-section, .tg-footer { padding-right: 19px; padding-left: 19px; }
+  .tg-static-hero { min-height: 460px; padding: 130px 19px 48px; }
+  .tg-static-grid, .tg-inventory-board, .tg-product-board { width: calc(100% - 38px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
