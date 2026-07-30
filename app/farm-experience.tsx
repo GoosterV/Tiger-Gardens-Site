@@ -1,13 +1,21 @@
 "use client";
 
 import { useEffect, useState, type PointerEvent } from "react";
-import PhotoRotator from "./photo-rotator";
+import BackgroundVideoPlaylist from "./background-video-playlist";
+import HeroPhotoDeck from "./hero-photo-deck";
 import { strains } from "./strains/strain-data";
 
 const heroPhotos = Array.from(
   { length: 24 },
   (_, index) => `/photo-rotation/hero-${String(index + 1).padStart(2, "0")}.jpg`,
 );
+
+const mountainsVideo = [
+  "/mountains-drone-01.mp4",
+  "/mountains-drone-02.mp4",
+  "/mountains-drone-03.mp4",
+  "/mountains-drone-04.mp4",
+];
 
 const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/tigergardens/?hl=en" },
@@ -68,13 +76,7 @@ export default function FarmExperience() {
           <figure className="hero-logo-main" aria-label="Tiger Gardens crest">
             <img src="/tiger-gardens-logo.png" alt="Tiger Gardens, Trinity County, established 2018" />
           </figure>
-          <figure className="hero-photo hero-photo-small fourth"><PhotoRotator photos={heroPhotos} offset={0} interval={6100} alt="Real flower photography from Tiger Gardens" /></figure>
-          <figure className="hero-photo hero-photo-small first"><PhotoRotator photos={heroPhotos} offset={6} interval={6700} alt="Real farm photography from Tiger Gardens" /></figure>
-          <figure className="hero-photo hero-photo-small second"><PhotoRotator photos={heroPhotos} offset={12} interval={7300} alt="A view from the Tiger Gardens photo archive" /></figure>
-          <figure className="hero-photo hero-photo-relocated">
-            <PhotoRotator photos={heroPhotos} offset={18} interval={7900} alt="Seasonal photography from the Tiger Gardens field" />
-            <figcaption>Field notes / 2026</figcaption>
-          </figure>
+          <HeroPhotoDeck photos={heroPhotos} />
           <a className="hero-status-card" href="/inventory"><span>Current garden</span><strong>04</strong><em>cultivars</em><b aria-hidden="true">↗</b></a>
           <a className="scroll-prompt" href="#story">Scroll to explore <span aria-hidden="true">↓</span></a>
         </section>
@@ -111,9 +113,7 @@ export default function FarmExperience() {
         </section>
 
         <section className="tg-mountains-film" id="garden" aria-label="Aerial view of Tiger Gardens">
-          <video autoPlay muted loop playsInline preload="metadata" poster="/garden-09.webp">
-            <source src="/mountains-drone-web.m4v" type="video/mp4" />
-          </video>
+          <BackgroundVideoPlaylist sources={mountainsVideo} poster="/garden-09.webp" />
           <div className="mountains-film-shade" aria-hidden="true" />
           <div className="mountains-film-content fx-reveal">
             <p>02 / Trinity County, California</p>

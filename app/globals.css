@@ -141,7 +141,8 @@ button { font: inherit; }
 .cultivar-card b { position: relative; z-index: 1; align-self: flex-end; font-size: 25px; font-weight: 400; }
 
 .tg-mountains-film { min-height: min(900px, 92svh); position: relative; display: grid; place-items: center; overflow: hidden; padding: clamp(110px, 14vw, 190px) max(7vw, 34px); color: var(--cream); background: var(--forest); }
-.tg-mountains-film > video { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+.mountains-main-video { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+.mountains-video-preload { width: 1px; height: 1px; position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
 .mountains-film-shade { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(19,38,46,0.82) 0%, rgba(19,38,46,0.42) 58%, rgba(19,38,46,0.62) 100%); }
 .mountains-film-content { width: min(100%, 1400px); position: relative; z-index: 1; }
 .mountains-film-content p { margin: 0 0 24px; color: var(--lime); font-size: 10px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
