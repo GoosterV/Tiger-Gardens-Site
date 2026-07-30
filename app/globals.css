@@ -65,7 +65,8 @@ button { font: inherit; }
 .hero-photo-relocated::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(5,19,14,0.56)); }
 .hero-photo-relocated figcaption { position: absolute; z-index: 1; right: 10%; bottom: 9%; left: 10%; color: var(--cream); font-size: 8px; font-weight: 900; letter-spacing: 0.07em; line-height: 1.2; text-transform: uppercase; }
 .hero-photo-small { width: clamp(380px, 42vw, 560px); aspect-ratio: 1; z-index: 1; border-radius: 52% 48% 57% 43% / 43% 57% 43% 57%; }
-.hero-photo-small.fourth { top: 2%; left: -2%; transform: translate(calc(var(--mouse-x) * 24px), calc(var(--mouse-y) * 17px)) rotate(-10deg); }
+.hero-photo-small.fourth { width: clamp(275px, 31vw, 455px); aspect-ratio: 2 / 3; top: 5%; left: 0; background: #f78a00; transform: translate(calc(var(--mouse-x) * 24px), calc(var(--mouse-y) * 17px)) rotate(-6deg); }
+.hero-photo-small.fourth img { object-fit: contain; }
 .hero-photo-small.first { top: 2%; right: -2%; transform: translate(calc(var(--mouse-x) * -24px), calc(var(--mouse-y) * -17px)) rotate(13deg); }
 .hero-photo-small.second { bottom: -3%; left: -2%; transform: translate(calc(var(--mouse-x) * 21px), calc(var(--mouse-y) * -18px)) rotate(-12deg); }
 .hero-badge { width: clamp(95px, 10vw, 150px); aspect-ratio: 1; position: absolute; z-index: 6; right: 23%; bottom: 19%; display: grid; place-items: center; border-radius: 49% 51% 45% 55% / 44% 56% 44% 56%; color: var(--forest); background: var(--lime); transform: translate(calc(var(--mouse-x) * -17px), calc(var(--mouse-y) * 17px)) rotate(9deg); }
@@ -215,7 +216,7 @@ button { font: inherit; }
   .hero-photo-main { width: 85vw; top: 55%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
   .hero-logo-main { width: min(88vw, 470px); top: 53%; transform: translate(calc(-50% + var(--mouse-x) * 6px), calc(-42% + var(--mouse-y) * 6px)) rotate(-2deg); }
   .hero-photo-small { width: 240px; box-shadow: 4px 4px 0 var(--forest); }
-  .hero-photo-small.fourth { top: 9%; left: -11%; }
+  .hero-photo-small.fourth { width: 168px; top: 10%; left: -2%; }
   .hero-photo-small.first { top: 10%; right: -12%; }
   .hero-photo-small.second { bottom: -1%; left: -11%; }
   .hero-badge { width: 101px; right: 4%; bottom: 17%; }
