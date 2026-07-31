@@ -473,8 +473,15 @@ button { font: inherit; }
 @keyframes float-second { 0%, 100% { transform: translate3d(0, 0, 0) rotate(-12deg); } 50% { transform: translate3d(0, -8px, 0) rotate(-13deg); } }
 @keyframes float-relocated { 0%, 100% { transform: translate3d(0, 0, 0) rotate(5deg); } 50% { transform: translate3d(0, 9px, 0) rotate(6deg); } }
 
-.tg-landing { display: block; background: var(--paper); }
-.tg-landing .landing-scene { width: 100%; height: 100svh; min-height: 700px; padding: 0; }
+.tg-landing {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  background: var(--paper);
+  -webkit-overflow-scrolling: touch;
+}
+.tg-landing .landing-scene { width: 100%; height: max(100svh, 700px); min-height: 700px; padding: 0; }
 .landing-enter {
   position: absolute !important;
   z-index: 12 !important;
