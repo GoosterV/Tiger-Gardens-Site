@@ -1,15 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HeroPhotoDeck from "./hero-photo-deck";
 import StoryVideoPlaylist from "./story-video-playlist";
 import TigerRain from "./tiger-rain";
 import { strains } from "./strains/strain-data";
-
-const heroPhotos = Array.from(
-  { length: 24 },
-  (_, index) => `/photo-rotation/hero-${String(index + 1).padStart(2, "0")}.jpg`,
-);
 
 const socialLinks = [
   { label: "Where to buy — Coming soon", href: "/where-to-buy" },
@@ -23,6 +17,7 @@ const socialLinks = [
 export default function FarmExperience() {
   const [entered, setEntered] = useState(false);
   const [raining, setRaining] = useState(false);
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
 
   useEffect(() => {
     if (entered) return;
@@ -74,8 +69,11 @@ export default function FarmExperience() {
             <figure className="hero-logo-main" data-tiger-collider>
               <img src="/tiger-gardens-logo.png" alt="Tiger Gardens, Trinity County, established 2018" />
             </figure>
-            <HeroPhotoDeck photos={heroPhotos} />
-            <button className="landing-enter" data-tiger-collider disabled={raining} type="button" onClick={enterGardens}>
+            <label className="landing-age">
+              <input type="checkbox" checked={ageConfirmed} onChange={(event) => setAgeConfirmed(event.target.checked)} />
+              <span>I confirm that I am 21 or older</span>
+            </label>
+            <button className="landing-enter" data-tiger-collider disabled={raining || !ageConfirmed} type="button" onClick={enterGardens}>
               Enter the Gardens <span aria-hidden="true">↓</span>
             </button>
           </section>
