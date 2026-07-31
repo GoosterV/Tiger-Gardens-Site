@@ -89,13 +89,17 @@ export default function TigerRain({ active, onComplete }: { active: boolean; onC
             body.vx -= 1.68 * speed * normalX;
             body.vy -= 1.68 * speed * normalY;
             body.spin += (Math.random() - 0.5) * 2;
+            if (Math.abs(normalY) > 0.7 && Math.abs(body.vx) < 1.2) {
+              body.vx += centerX < window.innerWidth / 2 ? -1.35 : 1.35;
+            }
           }
         });
         body.element.style.transform =
           `translate3d(${body.x}px, ${body.y}px, 0) rotate(${body.rotation}deg)`;
       });
 
-      if (now - started > 5200) {
+      const allOffScreen = bodies.every((body) => body.y > window.innerHeight + body.size);
+      if (allOffScreen && now - started > 1200) {
         bodies.forEach((body) => body.element.remove());
         onComplete();
         return;
