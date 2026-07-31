@@ -11,19 +11,19 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
       </header>
 
       <section className={`tg-static-hero strain-detail-hero ${strain.tone}`}>
-        <p>{strain.eyebrow}</p>
-        <h1>{strain.name}</h1>
-        <div>{strain.description}</div>
-        <a className="strain-back-link" href="/strains"><span aria-hidden="true">←</span> Back to cultivars</a>
-      </section>
-
-      <section className="strain-photo-stage" aria-label={`${strain.name} photography`}>
-        <p>{strain.name} / From the Tiger Gardens archive</p>
-        <figure className="strain-floating-photo strain-floating-photo-main">
-          <img className="strain-photo-fill" src={strain.photos[0]} alt="" aria-hidden="true" />
-          <PhotoRotator photos={strain.photos} alt={`${strain.name} flower grown and photographed at Tiger Gardens`} />
-        </figure>
-        <div className="strain-photo-mark" aria-hidden="true">{strain.number}</div>
+        <div className="strain-hero-copy">
+          <p>{strain.eyebrow}</p>
+          <h1>{strain.name}</h1>
+          <div>{strain.description}</div>
+          <a className="strain-back-link" href="/strains"><span aria-hidden="true">←</span> Back to cultivars</a>
+        </div>
+        <div className="strain-hero-photo" aria-label={`${strain.name} photography from the Tiger Gardens archive`}>
+          <figure className="strain-floating-photo strain-floating-photo-main">
+            <img className="strain-photo-fill" src={strain.photos[0]} alt="" aria-hidden="true" />
+            <PhotoRotator photos={strain.photos} alt={`${strain.name} flower grown and photographed at Tiger Gardens`} />
+          </figure>
+          <p>{strain.name} / Tiger Gardens archive</p>
+        </div>
       </section>
 
       <section className="strain-profile-body">
