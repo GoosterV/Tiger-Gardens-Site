@@ -1,0 +1,44 @@
+warning: in the working copy of 'cloudflare-workers.d.ts', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/cloudflare-workers.d.ts b/cloudflare-workers.d.ts[m
+[1mindex 5690da7..64008cd 100644[m
+[1m--- a/cloudflare-workers.d.ts[m
+[1m+++ b/cloudflare-workers.d.ts[m
+[36m@@ -1,22 +1,20 @@[m
+[31m-declare[m
+[31m-cd "C:\Projects\TigerOS\TigerOS\web"[m
+[31m-[m
+[31m-@'[m
+ declare module "cloudflare:workers" {[m
+[31m-  export const env: {[m
+[31m-    ASSETS: any;[m
+[32m+[m[32m  export interface Env {[m
+[32m+[m[32m    ASSETS: {[m
+[32m+[m[32m      fetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response>;[m
+[32m+[m[32m    };[m
+     DB: any;[m
+[31m-    IMAGES: any;[m
+[31m-  };[m
+[31m-}[m
+[32m+[m[32m    IMAGES: {[m
+[32m+[m[32m      input(stream: ReadableStream): {[m
+[32m+[m[32m        transform(options: Record<string, unknown>): {[m
+[32m+[m[32m          toBlob?: () => Promise<Blob>;[m
+[32m+[m[32m          blob: () => Promise<Blob>;[m
+[32m+[m[32m        };[m
+[32m+[m[32m      };[m
+[32m+[m[32m    };[m
+[32m+[m[32m  }[m
+ [m
+[31m-declare global {[m
+[31m-  type Fetcher = {[m
+[31m-    fetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response>;[m
+[31m-  };[m
+[31m-[m
+[31m-  type D1Database = any;[m
+[31m-  type D1PreparedStatement = any;[m
+[31m-  type D1Result = any;[m
+[31m-  type D1ResultData<T = unknown> = { results: T[] } | undefined;[m
+[32m+[m[32m  export const env: Env;[m
+ }[m
+[32m+[m
+[32m+[m[32mexport {};[m
