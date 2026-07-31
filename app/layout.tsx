@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import StalkingTiger from "./stalking-tiger";
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -49,7 +50,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <StalkingTiger />
+      </body>
     </html>
   );
 }

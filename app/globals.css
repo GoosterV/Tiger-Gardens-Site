@@ -510,6 +510,19 @@ button { font: inherit; }
 .landing-age input { width: 17px; height: 17px; margin: 0; accent-color: var(--forest); }
 .tiger-rain-layer { position: fixed; z-index: 2; inset: 0; overflow: hidden; pointer-events: none; }
 .tiger-rain-head { position: absolute; top: 0; left: 0; display: block; filter: drop-shadow(1px 2px 0 rgba(49,73,86,0.34)); will-change: transform; }
+.stalking-tiger { width: 230px; position: fixed; z-index: 14; pointer-events: none; opacity: 0; filter: drop-shadow(5px 7px 0 rgba(23,49,42,0.24)); transition: transform 700ms cubic-bezier(.2,.75,.25,1), opacity 320ms ease; will-change: transform, opacity; }
+.stalking-tiger img { width: 100%; height: auto; display: block; }
+.stalking-tiger.is-left { left: 0; bottom: 12%; transform: translateX(-88%) rotate(5deg); }
+.stalking-tiger.is-left.is-visible { opacity: 1; transform: translateX(-35%) rotate(5deg); }
+.stalking-tiger.is-right { right: 0; top: 26%; transform: translateX(88%) scaleX(-1) rotate(4deg); }
+.stalking-tiger.is-right.is-visible { opacity: 1; transform: translateX(35%) scaleX(-1) rotate(4deg); }
+.stalking-tiger.is-bottom-left { left: 4%; bottom: 0; transform: translateY(90%) rotate(-3deg); }
+.stalking-tiger.is-bottom-left.is-visible { opacity: 1; transform: translateY(43%) rotate(-3deg); }
+.stalking-tiger.is-bottom-right { right: 4%; bottom: 0; transform: translateY(90%) scaleX(-1) rotate(3deg); }
+.stalking-tiger.is-bottom-right.is-visible { opacity: 1; transform: translateY(43%) scaleX(-1) rotate(3deg); }
+.stalking-tiger.is-visible img { animation: stalkerBreathe 1.8s ease-in-out infinite; }
+
+@keyframes stalkerBreathe { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-5px) rotate(-1deg); } }
 
 @media (min-width: 641px) {
   .tg-landing .hero-logo-main { width: min(560px, 44vw); top: 47%; }
@@ -524,6 +537,7 @@ button { font: inherit; }
 }
 
 @media (max-width: 640px) {
+  .stalking-tiger { width: 155px; }
   .tg-landing .hero-logo-main { top: 46%; }
   .tg-landing .hero-photo-small.fourth { top: 5%; }
   .tg-landing .hero-photo-small.first { top: 4%; }
@@ -535,6 +549,10 @@ button { font: inherit; }
   .partner-requirements article { min-height: 190px; border-right: 0; border-bottom: 2px solid var(--forest); }
   .partner-requirements article:last-child { border-bottom: 0; }
   .partner-requirements h2 { margin-top: 35px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stalking-tiger { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
