@@ -6,6 +6,7 @@ import TigerRain from "./tiger-rain";
 import { strains } from "./strains/strain-data";
 
 const socialLinks = [
+  { label: "Wholesale partners — Coming soon", href: "/partners" },
   { label: "Where to buy — Coming soon", href: "/where-to-buy" },
   { label: "Packaged products — Coming soon", href: "/packaged-products" },
   { label: "Careers — Coming soon", href: "/careers" },
@@ -65,6 +66,13 @@ export default function FarmExperience() {
     window.requestAnimationFrame(() => {
       document.querySelector("#story")?.scrollIntoView({ block: "start" });
     });
+  }
+
+  function replayIntro() {
+    setAgeConfirmed(true);
+    setRaining(false);
+    setEntered(false);
+    window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   return (
@@ -158,7 +166,7 @@ export default function FarmExperience() {
           <div>{socialLinks.map((link) => <a key={link.label} href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noreferrer" : undefined}><span>{link.label}</span><span aria-hidden="true">↗</span></a>)}</div>
         </section>
 
-        <footer className="tg-footer"><a className="tg-wordmark" href="#story"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>
+        <footer className="tg-footer"><a className="tg-wordmark" href="#story"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p><button className="replay-intro" type="button" onClick={replayIntro}>Replay intro <span aria-hidden="true">✦</span></button></footer>
       </main>
     </>
   );
