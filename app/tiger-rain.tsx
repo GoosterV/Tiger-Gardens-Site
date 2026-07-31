@@ -27,13 +27,13 @@ export default function TigerRain({ active, onComplete }: { active: boolean; onC
     const trigger = document.querySelector<HTMLElement>(".hero-logo-main")?.getBoundingClientRect();
     const originX = trigger ? trigger.left + trigger.width / 2 : window.innerWidth / 2;
     const originY = trigger ? trigger.top + trigger.height / 2 : window.innerHeight / 2;
-    const count = window.innerWidth < 700 ? 55 : 90;
-    const bodies: TigerBody[] = Array.from({ length: count }, () => {
+    const count = window.innerWidth < 700 ? 90 : 140;
+    const bodies: TigerBody[] = Array.from({ length: count }, (_, index) => {
       const element = document.createElement("img");
-      const size = 14 + Math.random() * 14;
+      const size = 28 + Math.random() * 18;
       const angle = Math.random() * Math.PI * 2;
-      const speed = 8 + Math.random() * 10;
-      element.src = "/tiger-head.png";
+      const speed = 7 + Math.random() * 8;
+      element.src = index % 2 === 0 ? "/tiger-head.png" : "/cannabis-leaf.png";
       element.alt = "";
       element.className = "tiger-rain-head";
       element.style.width = `${size}px`;
@@ -57,8 +57,8 @@ export default function TigerRain({ active, onComplete }: { active: boolean; onC
       const step = Math.min(2, (now - previous) / 16.67);
       previous = now;
       bodies.forEach((body) => {
-        body.vy += 0.44 * step;
-        if (now - started > 1800) body.vy += 0.72 * step;
+        body.vy += 0.18 * step;
+        if (now - started > 3000) body.vy += 0.34 * step;
         body.x += body.vx * step;
         body.y += body.vy * step;
         body.rotation += body.spin * step;
@@ -76,7 +76,7 @@ export default function TigerRain({ active, onComplete }: { active: boolean; onC
       });
 
       const allOffScreen = bodies.every((body) => body.y > window.innerHeight + body.size);
-      if ((allOffScreen && now - started > 1200) || now - started > 4200) {
+      if ((allOffScreen && now - started > 2200) || now - started > 5800) {
         bodies.forEach((body) => body.element.remove());
         onComplete();
         return;
