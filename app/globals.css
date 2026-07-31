@@ -486,7 +486,7 @@ button { font: inherit; }
 .landing-enter span { color: var(--lime) !important; text-shadow: none; }
 .landing-age { position: absolute; z-index: 13; bottom: calc(5vh + 77px); left: 50%; display: inline-flex; align-items: center; gap: 10px; padding: 9px 12px; color: var(--forest); background: rgba(232,224,184,0.92); border: 2px solid var(--forest); cursor: pointer; font-size: 10px; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; transform: translateX(-50%); }
 .landing-age input { width: 17px; height: 17px; margin: 0; accent-color: var(--forest); }
-.tiger-rain-layer { position: fixed; z-index: 160; inset: 0; overflow: hidden; pointer-events: none; }
+.tiger-rain-layer { position: fixed; z-index: 2; inset: 0; overflow: hidden; pointer-events: none; }
 .tiger-rain-head { position: absolute; top: 0; left: 0; display: block; filter: drop-shadow(1px 2px 0 rgba(49,73,86,0.34)); will-change: transform; }
 
 @media (min-width: 641px) {

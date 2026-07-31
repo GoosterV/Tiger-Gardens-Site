@@ -18,6 +18,14 @@ export default function FarmExperience() {
   const [entered, setEntered] = useState(false);
   const [raining, setRaining] = useState(false);
   const [ageConfirmed, setAgeConfirmed] = useState(false);
+  const [ageStatusLoaded, setAgeStatusLoaded] = useState(false);
+
+  useEffect(() => {
+    const verified = window.localStorage.getItem("tg-age-verified") === "true";
+    setEntered(verified);
+    setAgeConfirmed(verified);
+    setAgeStatusLoaded(true);
+  }, []);
 
   useEffect(() => {
     if (entered) return;
@@ -46,7 +54,10 @@ export default function FarmExperience() {
   }, []);
 
   function enterGardens() {
-    if (!raining) setRaining(true);
+    if (!raining && ageConfirmed) {
+      window.localStorage.setItem("tg-age-verified", "true");
+      setRaining(true);
+    }
   }
 
   function finishEntry() {
@@ -58,7 +69,8 @@ export default function FarmExperience() {
 
   return (
     <>
-      {!entered && (
+      {!ageStatusLoaded && <div className="tg-intro age-checking" aria-hidden="true" />}
+      {ageStatusLoaded && !entered && (
         <div className={`tg-intro tg-landing ${raining ? "is-raining" : ""}`} role="dialog" aria-label="Enter Tiger Gardens">
           <section className="tg-hero-scene landing-scene">
             <div className="scene-grid" aria-hidden="true" />
