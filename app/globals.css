@@ -484,7 +484,7 @@ button { font: inherit; }
 .landing-enter:disabled { cursor: wait; opacity: 0.72; }
 .landing-enter span { color: var(--lime) !important; text-shadow: none; }
 .tiger-rain-layer { position: fixed; z-index: 160; inset: 0; overflow: hidden; pointer-events: none; }
-.tiger-rain-head { position: absolute; top: 0; left: 0; display: block; filter: drop-shadow(3px 5px 0 rgba(49,73,86,0.34)); will-change: transform; }
+.tiger-rain-head { position: absolute; top: 0; left: 0; display: block; filter: drop-shadow(1px 2px 0 rgba(49,73,86,0.34)); will-change: transform; }
 
 @media (min-width: 641px) {
   .tg-landing .hero-logo-main { width: min(560px, 44vw); top: 47%; }

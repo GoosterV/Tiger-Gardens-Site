@@ -24,10 +24,15 @@ export default function TigerRain({ active, onComplete }: { active: boolean; onC
       return () => window.clearTimeout(timer);
     }
 
-    const count = window.innerWidth < 700 ? 20 : 38;
-    const bodies: TigerBody[] = Array.from({ length: count }, (_, index) => {
+    const trigger = document.querySelector<HTMLElement>(".landing-enter")?.getBoundingClientRect();
+    const originX = trigger ? trigger.left + trigger.width / 2 : window.innerWidth / 2;
+    const originY = trigger ? trigger.top + trigger.height / 2 : window.innerHeight * 0.72;
+    const count = window.innerWidth < 700 ? 55 : 90;
+    const bodies: TigerBody[] = Array.from({ length: count }, () => {
       const element = document.createElement("img");
-      const size = 38 + Math.random() * 42;
+      const size = 14 + Math.random() * 14;
+      const angle = Math.PI + Math.random() * Math.PI;
+      const speed = 7 + Math.random() * 10;
       element.src = "/tiger-head.png";
       element.alt = "";
       element.className = "tiger-rain-head";
@@ -35,10 +40,10 @@ export default function TigerRain({ active, onComplete }: { active: boolean; onC
       layer.appendChild(element);
       return {
         element,
-        x: Math.random() * Math.max(1, window.innerWidth - size),
-        y: -90 - index * (18 + Math.random() * 18),
-        vx: (Math.random() - 0.5) * 4.5,
-        vy: Math.random() * 1.4,
+        x: originX - size / 2 + (Math.random() - 0.5) * 28,
+        y: originY - size / 2 + (Math.random() - 0.5) * 14,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 2,
         rotation: Math.random() * 360,
         spin: (Math.random() - 0.5) * 8,
         size,
@@ -51,11 +56,15 @@ export default function TigerRain({ active, onComplete }: { active: boolean; onC
     const animate = (now: number) => {
       const step = Math.min(2, (now - previous) / 16.67);
       previous = now;
-      const obstacles = Array.from(document.querySelectorAll<HTMLElement>("[data-tiger-collider]"))
-        .map((element) => element.getBoundingClientRect());
+      const collisionPhase = now - started < 1450;
+      const obstacles = collisionPhase
+        ? Array.from(document.querySelectorAll<HTMLElement>("[data-tiger-collider]:not(.landing-enter)"))
+          .map((element) => element.getBoundingClientRect())
+        : [];
 
       bodies.forEach((body) => {
-        body.vy += 0.34 * step;
+        body.vy += 0.44 * step;
+        if (now - started > 1800) body.vy += 0.72 * step;
         body.x += body.vx * step;
         body.y += body.vy * step;
         body.rotation += body.spin * step;
@@ -99,7 +108,7 @@ export default function TigerRain({ active, onComplete }: { active: boolean; onC
       });
 
       const allOffScreen = bodies.every((body) => body.y > window.innerHeight + body.size);
-      if (allOffScreen && now - started > 1200) {
+      if ((allOffScreen && now - started > 1200) || now - started > 4200) {
         bodies.forEach((body) => body.element.remove());
         onComplete();
         return;
