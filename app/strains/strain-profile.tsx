@@ -35,7 +35,6 @@ export default function StrainProfilePage({ strain }: { strain: StrainProfile })
         <div className="strain-fact-grid" aria-label={`${strain.name} cultivar details`}>
           <article><span>Lineage</span><strong>{strain.lineage}</strong></article>
           <article><span>Cultivar type</span><strong>{strain.type}</strong></article>
-          <article><span>Flower window</span><strong>{strain.flower}</strong></article>
           <article><span>Typical potency</span><strong>{strain.typicalPotency}</strong></article>
         </div>
 
