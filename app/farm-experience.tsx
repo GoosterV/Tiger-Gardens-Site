@@ -1,10 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import HeroPhotoDeck from "./hero-photo-deck";
 import StoryVideoPlaylist from "./story-video-playlist";
+import TigerRain from "./tiger-rain";
 import { strains } from "./strains/strain-data";
 
+const heroPhotos = Array.from(
+  { length: 24 },
+  (_, index) => `/photo-rotation/hero-${String(index + 1).padStart(2, "0")}.jpg`,
+);
+
 const socialLinks = [
+  { label: "Where to buy — Coming soon", href: "/where-to-buy" },
+  { label: "Packaged products — Coming soon", href: "/packaged-products" },
+  { label: "Careers — Coming soon", href: "/careers" },
   { label: "Instagram", href: "https://www.instagram.com/tigergardens/?hl=en" },
   { label: "Facebook", href: "https://www.facebook.com/114339021591501" },
   { label: "X", href: "https://www.x.com/TigerGardens" },
@@ -12,6 +22,7 @@ const socialLinks = [
 
 export default function FarmExperience() {
   const [entered, setEntered] = useState(false);
+  const [raining, setRaining] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +39,10 @@ export default function FarmExperience() {
   }, []);
 
   function enterGardens() {
+    if (!raining) setRaining(true);
+  }
+
+  function finishEntry() {
     setEntered(true);
     window.requestAnimationFrame(() => {
       document.querySelector("#story")?.scrollIntoView({ block: "start" });
@@ -37,11 +52,22 @@ export default function FarmExperience() {
   return (
     <>
       {!entered && (
-        <div className="tg-intro" role="dialog" aria-label="Enter Tiger Gardens">
-          <div className="intro-pulse" aria-hidden="true" />
-          <img src="/tiger-gardens-logo.png" alt="Tiger Gardens" />
-          <button type="button" onClick={enterGardens}>Enter the Gardens <span aria-hidden="true">↓</span></button>
-          <p>Trinity County, California</p>
+        <div className={`tg-intro tg-landing ${raining ? "is-raining" : ""}`} role="dialog" aria-label="Enter Tiger Gardens">
+          <section className="tg-hero-scene landing-scene">
+            <div className="scene-grid" aria-hidden="true" />
+            <div className="scene-line line-one" aria-hidden="true" />
+            <div className="scene-line line-two" aria-hidden="true" />
+            <p className="scene-meta meta-left">Trinity County<br />California</p>
+            <p className="scene-meta meta-right">Sun-grown<br />Est. 2018</p>
+            <figure className="hero-logo-main" data-tiger-collider>
+              <img src="/tiger-gardens-logo.png" alt="Tiger Gardens, Trinity County, established 2018" />
+            </figure>
+            <HeroPhotoDeck photos={heroPhotos} />
+            <button className="landing-enter" data-tiger-collider disabled={raining} type="button" onClick={enterGardens}>
+              Enter the Gardens <span aria-hidden="true">↓</span>
+            </button>
+          </section>
+          <TigerRain active={raining} onComplete={finishEntry} />
         </div>
       )}
 
@@ -107,7 +133,7 @@ export default function FarmExperience() {
 
         <section className="tg-social-section">
           <p>Garden updates</p>
-          <div>{socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer"><span>{link.label}</span><span aria-hidden="true">↗</span></a>)}</div>
+          <div>{socialLinks.map((link) => <a key={link.label} href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noreferrer" : undefined}><span>{link.label}</span><span aria-hidden="true">↗</span></a>)}</div>
         </section>
 
         <footer className="tg-footer"><a className="tg-wordmark" href="#story"><img src="/tiger-gardens-logo.png" alt="Tiger Gardens" /></a><p>Trinity County, California · 21+</p><p>© {new Date().getFullYear()} Tiger Gardens</p></footer>

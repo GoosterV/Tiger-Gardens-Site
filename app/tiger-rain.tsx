@@ -1,0 +1,114 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
+type TigerBody = {
+  element: HTMLImageElement;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  rotation: number;
+  spin: number;
+  size: number;
+};
+
+export default function TigerRain({ active, onComplete }: { active: boolean; onComplete: () => void }) {
+  const layerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!active || !layerRef.current) return;
+    const layer = layerRef.current;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const timer = window.setTimeout(onComplete, 450);
+      return () => window.clearTimeout(timer);
+    }
+
+    const count = window.innerWidth < 700 ? 20 : 38;
+    const bodies: TigerBody[] = Array.from({ length: count }, (_, index) => {
+      const element = document.createElement("img");
+      const size = 38 + Math.random() * 42;
+      element.src = "/tiger-head.png";
+      element.alt = "";
+      element.className = "tiger-rain-head";
+      element.style.width = `${size}px`;
+      layer.appendChild(element);
+      return {
+        element,
+        x: Math.random() * Math.max(1, window.innerWidth - size),
+        y: -90 - index * (18 + Math.random() * 18),
+        vx: (Math.random() - 0.5) * 4.5,
+        vy: Math.random() * 1.4,
+        rotation: Math.random() * 360,
+        spin: (Math.random() - 0.5) * 8,
+        size,
+      };
+    });
+
+    let frame = 0;
+    let previous = performance.now();
+    const started = previous;
+    const animate = (now: number) => {
+      const step = Math.min(2, (now - previous) / 16.67);
+      previous = now;
+      const obstacles = Array.from(document.querySelectorAll<HTMLElement>("[data-tiger-collider]"))
+        .map((element) => element.getBoundingClientRect());
+
+      bodies.forEach((body) => {
+        body.vy += 0.34 * step;
+        body.x += body.vx * step;
+        body.y += body.vy * step;
+        body.rotation += body.spin * step;
+
+        if (body.x < 0) {
+          body.x = 0;
+          body.vx = Math.abs(body.vx) * 0.72;
+        } else if (body.x + body.size > window.innerWidth) {
+          body.x = window.innerWidth - body.size;
+          body.vx = -Math.abs(body.vx) * 0.72;
+        }
+
+        const centerX = body.x + body.size / 2;
+        const centerY = body.y + body.size / 2;
+        const radius = body.size * 0.38;
+        obstacles.forEach((rect) => {
+          const nearestX = Math.max(rect.left, Math.min(centerX, rect.right));
+          const nearestY = Math.max(rect.top, Math.min(centerY, rect.bottom));
+          const dx = centerX - nearestX;
+          const dy = centerY - nearestY;
+          const distanceSquared = dx * dx + dy * dy;
+          if (distanceSquared >= radius * radius) return;
+          const distance = Math.max(0.01, Math.sqrt(distanceSquared));
+          const normalX = distance > 0.02 ? dx / distance : 0;
+          const normalY = distance > 0.02 ? dy / distance : -1;
+          const overlap = radius - distance;
+          body.x += normalX * overlap;
+          body.y += normalY * overlap;
+          const speed = body.vx * normalX + body.vy * normalY;
+          if (speed < 0) {
+            body.vx -= 1.68 * speed * normalX;
+            body.vy -= 1.68 * speed * normalY;
+            body.spin += (Math.random() - 0.5) * 2;
+          }
+        });
+        body.element.style.transform =
+          `translate3d(${body.x}px, ${body.y}px, 0) rotate(${body.rotation}deg)`;
+      });
+
+      if (now - started > 5200) {
+        bodies.forEach((body) => body.element.remove());
+        onComplete();
+        return;
+      }
+      frame = window.requestAnimationFrame(animate);
+    };
+
+    frame = window.requestAnimationFrame(animate);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      bodies.forEach((body) => body.element.remove());
+    };
+  }, [active, onComplete]);
+
+  return <div className="tiger-rain-layer" ref={layerRef} aria-hidden="true" />;
+}
